@@ -1,0 +1,63 @@
+<article class="pro">
+    <section class="p-banner" style="background-image:url(http://nuantong.wxlc.net/uploadfile/p_banner.jpg);"></section>
+    <section class="p-list">
+        <div class="containern">
+            <div class="p-type">
+                <div class="list">
+                    <ul>
+                        {{for err_type}}
+                        <li data-id="{{:catid}}">
+                            <a {{if catid==#parent.parent.data.err_catid }} class="on" {{/if}} href="#Products/index/catid/{{:catid}}"><span>{{:catname}}</span><i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                            <ul></ul>
+                        </li>
+                        {{/for}}
+                    </ul>
+                </div>
+                <div class="p-contact">
+                    <div class="tit">
+                        <div class="ch">联系我们</div>
+                        <div class="en">CONTACT　US</div>
+                    </div>
+                    <div class="content">
+                        <p><i class="fa fa-map-marker" aria-hidden="true"></i> 工厂地址：哈尔滨市松北区松浦镇良种场
+                        </p>
+                        <p><i class="fa fa-map-marker" aria-hidden="true"></i> 办公室地址：哈尔滨市松北区松浦镇良种场
+                        </p>
+                        <p><i class="fa fa-phone" aria-hidden="true"></i> 电话：0451-88973803 13903651587</p>
+                        <p><i class="fa fa-fax" aria-hidden="true"></i> 传真：0451-58830060
+                        </p>
+                        <p><i class="fa fa-envelope" aria-hidden="true"></i> 邮箱：hrbntfj@126.com
+                        </p>
+                        <p><i class="fa fa-qq" aria-hidden="true"></i> 在线QQ:243223059 (点击咨询)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="inner">
+                <div class="position">
+                    <a href="#">首页</a><i>></i><a href="#Products">产品中心</a><i>></i><a href="javascript:void(0);">{{:err_catname}}</a>
+                </div>
+                <div class="list">
+                    {{for err_info}} {{if (#index+1)%3 == 0 }}
+                    <div class="item mRn">
+                        {{else}}
+                        <div class="item">
+                            {{/if}}
+                            <a href="#Products/show/contentid/{{:contentid}}">
+                                <div class="pic container_aspectratio" data-aspectratio="1.17037037037037" data-aspecttype="thiswidth_height_auto" style="background:url(http://nuantong.wxlc.net/{{:photo}}) center; background-size:cover;">
+                                    <!-- <img src="/{{:photo}}">--></div>
+                                <div class="inner">
+                                    <div class="title">{{:title}}</div>
+                                </div>
+                                <div class="bg opacity-6">
+                                    <div class="more opacity-7">查看详细</div>
+                                </div>
+                            </a>
+                        </div>
+                        {{/for}}
+                        <div class="clearfix"></div>
+                        <a class="loadmore" href="javascript:void(0);"><i class="fa fa-eye" aria-hidden="true"></i>查看更多</a>
+                    </div>
+                </div>
+            </div>
+    </section>
+</article>

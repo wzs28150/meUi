@@ -1,0 +1,15 @@
+@charset "utf-8";
+.contact{
+	.contact-list{ padding: 30px 50px;
+		.item{ margin-bottom: 10px; overflow: hidden;
+			.pic{
+				img{width: 100%; display: block;}
+			}
+			table,tr,td{ font-size: 14px;  color: #3e3e3e; font-weight: bold; line-height: 22px;}
+			table{ margin: 20px 0;}
+			td{ padding-left: 30px;}
+		}
+	}
+}
+
+

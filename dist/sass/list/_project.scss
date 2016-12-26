@@ -1,0 +1,48 @@
+@charset "utf-8";
+.project{
+	/*--project_type--*/
+	.r-mian{ overflow: hidden;
+		.tit{ font-size: 30px; color: #3e3e3e; font-weight: 600; line-height: 120px;}
+	}
+	.project-type{ padding:2%;
+		.list{ margin-bottom: 5%;
+			ul{ overflow: hidden;
+				li{ float: left; width: 29.33%; margin: 2%; 
+					a{ display: block; text-align: center;
+						img{ display: block; width: 100%;}
+						p{ font-size: 20px; font-weight: 500;  color: #3e3e3e; line-height: 20px; margin-top: 16px;
+							&.under{text-decoration: underline;}
+						}
+					}
+					
+				}
+			}
+			
+		}
+	}
+	
+	
+	.project-main{ padding:0 54px;
+		.pic{
+			img{ width: 100%; display: block;}
+		}
+		.canshu{
+			.tit{font-size: 20px; line-height: 60px;font-weight: 600; color: #000; }
+			table{ width: 100%; }
+			table,tr,td{ border: 1px solid #3e3e3e; line-height: 40px; color: #3e3e3e;}
+			.info{ padding-left: 5% ;}
+			
+		}
+		.content{ font-size: 18px; line-height: 28px; color: #3e3e3e; padding-top: 20px; padding-bottom: 5%;
+			.tit{font-size: 20px; line-height: 60px;font-weight: 600; color: #000; }
+		}
+	} 
+	.pro-content{ border-top: 1px dashed #000000; font-size: 18px; line-height: 29px; color: #282828; margin:48px 70px 0 34px; padding: 30px 0 0 40px;}
+	
+}
+
+
+
+
+
+

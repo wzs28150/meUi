@@ -1,5 +1,5 @@
 //控制器
-meui.Products = (function() {
+meui.action.Products = (function() {
     "use strict";
     var stateMap = {
 
@@ -34,7 +34,7 @@ meui.Products = (function() {
         initModule: initModule,
     };
 }());
-meui.Index = (function() {
+meui.action.Index = (function() {
     "use strict";
     var stateMap = {
 
@@ -124,7 +124,7 @@ meui.Index = (function() {
     };
 }());
 
-meui.Service = (function() {
+meui.action.Service = (function() {
     "use strict";
     var stateMap = {
 
@@ -143,7 +143,7 @@ meui.Service = (function() {
     };
 }());
 
-meui.Cooper = (function() {
+meui.action.Cooper = (function() {
     "use strict";
     var stateMap = {
 
@@ -163,7 +163,7 @@ meui.Cooper = (function() {
     };
 }());
 
-meui.About = (function() {
+meui.action.About = (function() {
     "use strict";
     var stateMap = {
 
@@ -182,7 +182,7 @@ meui.About = (function() {
     };
 }());
 
-meui.Contact = (function() {
+meui.action.Contact = (function() {
     "use strict";
     var stateMap = {
 

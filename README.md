@@ -44,6 +44,9 @@ meui.xxx = (function() {
     };
 }());
 ```
+
+###### `meUi.js`
+
 ```sh
  * meui.exists      # To determine whether the existence of DOM
  * meui.aspectratio # To solve the DOM size
@@ -55,4 +58,28 @@ meui.xxx = (function() {
  * meui.loadMore    # loadMore
  * meui.medel       # Model
  * Swiper           # Swiper
+```
+
+###### `meUI.action.js`
+Example:
+```sh
+meui.action.Index = (function() {
+    "use strict";
+    var stateMap = {},
+        jqueryMap = {},
+        setJqueryMap,
+        initModule;
+    setJqueryMap = function() {
+
+    };
+    initModule = function($data, $setting) {
+        meui.Nav.initModule(0);
+    };
+    return {
+        initModule: initModule,
+    };
+}());
+```
+```sh
+meui.Nav.initModule(i);   # nav selected state i: nav.on.index
 ```

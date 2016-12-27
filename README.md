@@ -8,8 +8,23 @@
 * `images/` -- images
 * `sass/` -- sass file
 * `scripts/` -- js file
-  + meUI.js -- Core JS file
-  + meUI.action.js -- Controller file  
+  + `meUI.js` -- Core JS file
+  + `meUI.action.js` -- Controller file  
 
 `tpl/` -- template file  
 `tpl/` -- uploadfile
+
+#### js Modular
+* Module format
+```sh
+meui.xxx = (function() {
+    "use strict";
+    var initModule;
+    initModule = function($setting) {
+
+    };
+    return {
+        initModule: initModule
+    };
+}());
+```

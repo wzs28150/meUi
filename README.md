@@ -63,7 +63,7 @@ meui.xxx = (function() {
 ###### `meUI.action.js`
 Example:
 ```sh
-meui.action.Index = (function() {
+meui.Index_action = (function() {
     "use strict";
     var stateMap = {
       // setting

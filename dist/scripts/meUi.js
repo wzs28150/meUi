@@ -467,9 +467,9 @@ meui.templates = (function() {
     loadAction = function(data) {
         var actionstr = '';
         if (jqueryMap.$hashmain) {
-            actionstr = 'meui.action.' + jqueryMap.$hashmain + '.initModule(data,jqueryMap);';
+            actionstr = 'meui.' + jqueryMap.$hashmain + '_action.initModule(data,jqueryMap);';
         } else {
-            actionstr = 'meui.action.Index.initModule(data,jqueryMap);';
+            actionstr = 'meui.Index_action.initModule(data,jqueryMap);';
         }
         //console.log(jqueryMap.$hashmain);
         eval(actionstr);

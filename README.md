@@ -44,6 +44,7 @@ meui.xxx = (function() {
     };
 }());
 ```
+```sh
  * meui.exists      # To determine whether the existence of DOM
  * meui.aspectratio # To solve the DOM size
  * meui.inviewport  # To determine whether the dom in viewport
@@ -54,3 +55,4 @@ meui.xxx = (function() {
  * meui.loadMore    # loadMore
  * meui.medel       # Model
  * Swiper           # Swiper
+```

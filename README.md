@@ -44,3 +44,13 @@ meui.xxx = (function() {
     };
 }());
 ```
+ * meui.exists      # To determine whether the existence of DOM
+ * meui.aspectratio # To solve the DOM size
+ * meui.inviewport  # To determine whether the dom in viewport
+ * meui.animated    # To solve the animation
+ * meui.shell       # shell
+ * meui.hashset     # To solve the hash
+ * meui.templates   # To solve templates fragment
+ * meui.loadMore    # loadMore
+ * meui.medel       # Model
+ * Swiper           # Swiper

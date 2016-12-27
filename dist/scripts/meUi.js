@@ -159,6 +159,7 @@ meui.aspectratio = (function($) {
 //处理动画
 meui.inviewport = (function($) {
     "use strict";
+    var initModule;
     $.belowthefold = function(element, settings) {
         var fold = $(window).height() + $(window).scrollTop();
         return fold <= $(element).offset().top - settings.threshold;
@@ -178,33 +179,39 @@ meui.inviewport = (function($) {
     $.inviewport = function(element, settings) {
         return !$.rightofscreen(element, settings) && !$.leftofscreen(element, settings) && !$.belowthefold(element, settings) && !$.abovethetop(element, settings);
     };
-    $.extend($.expr[':'], {
-        "below-the-fold": function(a) {
-            return $.belowthefold(a, {
-                threshold: 0
-            });
-        },
-        "above-the-top": function(a) {
-            return $.abovethetop(a, {
-                threshold: 0
-            });
-        },
-        "left-of-screen": function(a) {
-            return $.leftofscreen(a, {
-                threshold: 0
-            });
-        },
-        "right-of-screen": function(a) {
-            return $.rightofscreen(a, {
-                threshold: 0
-            });
-        },
-        "in-viewport": function(a) {
-            return $.inviewport(a, {
-                threshold: 0
-            });
-        }
-    });
+
+    initModule = function() {
+        $.extend($.expr[':'], {
+            "below-the-fold": function(a) {
+                return $.belowthefold(a, {
+                    threshold: 0
+                });
+            },
+            "above-the-top": function(a) {
+                return $.abovethetop(a, {
+                    threshold: 0
+                });
+            },
+            "left-of-screen": function(a) {
+                return $.leftofscreen(a, {
+                    threshold: 0
+                });
+            },
+            "right-of-screen": function(a) {
+                return $.rightofscreen(a, {
+                    threshold: 0
+                });
+            },
+            "in-viewport": function(a) {
+                return $.inviewport(a, {
+                    threshold: 0
+                });
+            }
+        });
+    };
+    return {
+        initModule: initModule
+    };
 })(jQuery);
 meui.animated = (function($) {
     "use strict";
@@ -222,7 +229,7 @@ meui.animated = (function($) {
         }
     };
     initModule = function() {
-        //meui.inviewport
+        meui.inviewport.initModule();
         animated_contents();
         $(window).scroll(function() {
             animated_contents();
@@ -1692,10 +1699,12 @@ var Swiper = function(selector, params) {
         var delta = 0;
         //Opera & IE
         if (e.detail) delta = -e.detail;
+        pera & IE
+        if (e.detail) delta = -e.detail;
         //WebKits
         else if (we === 'mousewheel') {
             if (params.mousewheelControlForceToAxis) {
-                if (isH) {
+                if (isisH) {
                     if (Math.abs(e.wheelDeltaX) > Math.abs(e.wheelDeltaY)) delta = e.wheelDeltaX;
                     else return;
                 } else {

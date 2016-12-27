@@ -1,18 +1,14 @@
 ![Alt text](uploadfile/logo.png)
 > This is a work in the project, the use of SPA. As a beginner, I summarize it to facilitate future use.
 
-`dist/`
+`dist/` -- Core file
 
-`.sass-cache/`
+* `.sass-cache/` -- sass cache
 
-`asset/`
+* `css/` -- css
 
-`css/`
+* `images/` -- images
 
-`images/`
+* `sass/` -- sass file
 
-`sass/`
-
-`scripts/`
-
-`wapdist/`
+* `scripts/` -- js file

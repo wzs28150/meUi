@@ -21,6 +21,7 @@ meui.Products = (function() {
         })
     };
     initModule = function($data, $setting) {
+        meui.Nav.initModule(1);
         if ($setting.$tempindex) {
             //内容
             nav_change();
@@ -112,6 +113,7 @@ meui.Index = (function() {
         });
     };
     initModule = function($data) {
+        meui.Nav.initModule(0);
         $('#i_support').support({});
         indexBanner();
         i_pro_change();
@@ -134,7 +136,7 @@ meui.Service = (function() {
 
     };
     initModule = function($data, $setting) {
-
+        meui.Nav.initModule(2);
     };
     return {
         initModule: initModule,
@@ -153,6 +155,7 @@ meui.Cooper = (function() {
 
     };
     initModule = function($data, $setting) {
+        meui.Nav.initModule(3);
         meui.loadMore.initModule(4, 2, '.cooper-list .item', '.cooper-list .loadmore');
     };
     return {
@@ -172,7 +175,7 @@ meui.About = (function() {
 
     };
     initModule = function($data, $setting) {
-
+        meui.Nav.initModule(4);
     };
     return {
         initModule: initModule,
@@ -191,6 +194,7 @@ meui.Contact = (function() {
 
     };
     createMap = function() {
+        meui.Nav.initModule(5);
         var map = new BMap.Map("dituContent"); //在百度地图容器中创建一个地图
         var point = new BMap.Point(126.638206, 45.855999); //定义一个中心点坐标
         map.centerAndZoom(point, 17); //设定地图的中心点和坐标并将地图显示在地图容器中
@@ -271,7 +275,35 @@ meui.Backtotop = (function() {
         initModule: initModule,
     };
 }());
+meui.Nav = (function() {
+    "use strict";
+    var stateMap = {
 
+        },
+        jqueryMap = {},
+        setJqueryMap,
+        initModule, navOn;
+    setJqueryMap = function() {
+
+    };
+    initModule = function(i) {
+        //console.log('aa');
+        if (i) {
+            $('header .inner nav a').removeClass('on');
+            $('header .inner nav a').eq(i).addClass('on');
+        } else {
+            $('header .inner nav a').click(function() {
+                //alert(1)
+                $('header .inner nav a').removeClass('on');
+                $(this).addClass('on');
+            });
+        }
+
+    };
+    return {
+        initModule: initModule,
+    };
+}());
 meui.Callback = (function() {
     "use strict";
     var stateMap = {
@@ -285,6 +317,7 @@ meui.Callback = (function() {
     };
     initModule = function() {
         meui.Backtotop.initModule();
+        meui.Nav.initModule();
     };
     return {
         initModule: initModule,

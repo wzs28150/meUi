@@ -411,7 +411,8 @@ meui.hashset = (function() {
         //console.log(stateMap.hasharry);
         getHash();
         //console.log(jqueryMap);
-        meui.medel.initModule(jqueryMap);
+        //meui.medel.initModule(jqueryMap);
+        meui.templates.initModule(jqueryMap);
         //console.log(jqueryMap);
 
         //meui.templates.jquerydata = meui.medel.jquerydata;
@@ -492,8 +493,8 @@ meui.templates = (function() {
             if (jqueryMap.$tempindex == 'show') {
                 $.get("./" + jqueryMap.$tpl + "/" + jqueryMap.$hashmain + "_main_tmp.html", function(tempdata) {
                     var Tmpl = $.templates(tempdata);
-                    var html = Tmpl.render(data);
-                    $("title").html(data.err_title + "-哈尔滨市暖通风机");
+                    var html = Tmpl.render();
+                    //$("title").html(data.err_title + "-哈尔滨市暖通风机");
                     $(jqueryMap.$container).html(html);
                     loadAction(data);
                     $('article').addClass('in-viewport');
@@ -502,8 +503,8 @@ meui.templates = (function() {
                 //alert(1)
                 $.get("./" + jqueryMap.$tpl + "/" + jqueryMap.$hashmain + "_tmp.html", function(tempdata, textStauts) {
                     var Tmpl = $.templates(tempdata);
-                    var html = Tmpl.render(data);
-                    $("title").html(data.err_catname + "-哈尔滨市暖通风机");
+                    var html = Tmpl.render();
+                    //$("title").html(data.err_catname + "-哈尔滨市暖通风机");
                     $(jqueryMap.$container).html(html);
                     loadAction(data);
                     meui.aspectratio;
@@ -514,7 +515,7 @@ meui.templates = (function() {
             $.get("./" + jqueryMap.$tpl + "/" + "Index_tmp.html", function(tempdata) {
                 var Tmpl = $.templates(tempdata);
                 //meui.medel.initModule(jqueryMap);
-                var html = Tmpl.render(data);
+                var html = Tmpl.render();
                 $("title").html("首页-哈尔滨市暖通风机");
                 $(jqueryMap.$container).html(html);
                 loadAction(data);

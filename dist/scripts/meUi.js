@@ -157,61 +157,61 @@ meui.aspectratio = (function($) {
     };
 }(jQuery));
 //处理动画
-meui.inviewport = (function($) {
-    "use strict";
-    var initModule;
+meui.viewport = (function($) {
+
     $.belowthefold = function(element, settings) {
         var fold = $(window).height() + $(window).scrollTop();
         return fold <= $(element).offset().top - settings.threshold;
     };
+
     $.abovethetop = function(element, settings) {
         var top = $(window).scrollTop();
         return top >= $(element).offset().top + $(element).height() - settings.threshold;
     };
+
     $.rightofscreen = function(element, settings) {
         var fold = $(window).width() + $(window).scrollLeft();
         return fold <= $(element).offset().left - settings.threshold;
     };
+
     $.leftofscreen = function(element, settings) {
         var left = $(window).scrollLeft();
         return left >= $(element).offset().left + $(element).width() - settings.threshold;
     };
+
     $.inviewport = function(element, settings) {
         return !$.rightofscreen(element, settings) && !$.leftofscreen(element, settings) && !$.belowthefold(element, settings) && !$.abovethetop(element, settings);
     };
 
-    initModule = function() {
-        $.extend($.expr[':'], {
-            "below-the-fold": function(a) {
-                return $.belowthefold(a, {
-                    threshold: 0
-                });
-            },
-            "above-the-top": function(a) {
-                return $.abovethetop(a, {
-                    threshold: 0
-                });
-            },
-            "left-of-screen": function(a) {
-                return $.leftofscreen(a, {
-                    threshold: 0
-                });
-            },
-            "right-of-screen": function(a) {
-                return $.rightofscreen(a, {
-                    threshold: 0
-                });
-            },
-            "in-viewport": function(a) {
-                return $.inviewport(a, {
-                    threshold: 0
-                });
-            }
-        });
-    };
-    return {
-        initModule: initModule
-    };
+    $.extend($.expr[':'], {
+        "below-the-fold": function(a, i, m) {
+            return $.belowthefold(a, {
+                threshold: 0
+            });
+        },
+        "above-the-top": function(a, i, m) {
+            return $.abovethetop(a, {
+                threshold: 0
+            });
+        },
+        "left-of-screen": function(a, i, m) {
+            return $.leftofscreen(a, {
+                threshold: 0
+            });
+        },
+        "right-of-screen": function(a, i, m) {
+            return $.rightofscreen(a, {
+                threshold: 0
+            });
+        },
+        "in-viewport": function(a, i, m) {
+            return $.inviewport(a, {
+                threshold: 0
+            });
+        }
+    });
+
+
 })(jQuery);
 meui.animated = (function($) {
     "use strict";
@@ -227,9 +227,18 @@ meui.animated = (function($) {
                 }
             });
         }
+        $(".animate-element:below-the-fold").each(function(i) {
+            var $this = $(this);
+            if ($this.hasClass('in-viewport')) {
+                setTimeout(function() {
+                    $this.removeClass('in-viewport');
+                }, 100 * i);
+            }
+        });
     };
     initModule = function() {
-        meui.inviewport.initModule();
+        //meui.inviewport.initModule();
+
         animated_contents();
         $(window).scroll(function() {
             animated_contents();

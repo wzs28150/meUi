@@ -65,18 +65,20 @@ Example:
 ```sh
 meui.action.Index = (function() {
     "use strict";
-    var stateMap = {},
-        jqueryMap = {},
+    var stateMap = {
+      // setting
+    },
+        jqueryMap = {}, # jquery collections cache
         setJqueryMap,
         initModule;
     setJqueryMap = function() {
 
     };
     initModule = function($data, $setting) {
-        meui.Nav.initModule(0);
+        meui.Nav.initModule(0); # nav selected state i: nav.on.index
     };
     return {
-        initModule: initModule,
+        initModule: initModule, # export
     };
 }());
 ```

@@ -413,6 +413,7 @@ meui.hashset = (function() {
         //console.log(jqueryMap);
         //meui.medel.initModule(jqueryMap);
         meui.templates.initModule(jqueryMap);
+        meui.animated.initModule();
         //console.log(jqueryMap);
 
         //meui.templates.jquerydata = meui.medel.jquerydata;

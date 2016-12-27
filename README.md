@@ -14,6 +14,22 @@
 `tpl/` -- template file  
 `tpl/` -- uploadfile
 
+#### methods
+
+```sh
+$(function() {
+    "use strict";
+    meui.initModule({
+        ishash: true,                # Whether to open the hash
+        url: 'http://api.xxx.com/',  # api url  
+        api: 'api.php/',             # api Entry file
+        tpl: 'tpl',                  # Template fragment folder
+        container: $('#main')        # container jquery obj
+    });
+
+});
+```
+
 #### js Modular
 * Module format
 ```sh
@@ -24,7 +40,7 @@ meui.xxx = (function() {
 
     };
     return {
-        initModule: initModule
+        initModule: initModule # Unified export
     };
 }());
 ```

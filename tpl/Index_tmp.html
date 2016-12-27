@@ -2,24 +2,9 @@
     <section class="i_banner">
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="/dist/images/i_banner1.jpg">
-                    <img src="/dist/images/i_b1_t1.png" class="tit tit1 animate-element bottom-to-top" alt="">
-                    <img src="/dist/images/i_b1_t2.png" class="tit tit2 animate-element bottom-to-top" alt="">
-                    <img src="/dist/images/i_b1_t3.png" class="tit tit3 animate-element bottom-to-top" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="/dist/images/i_banner2.jpg">
-                    <img src="/dist/images/i_b2_t1.png" class="tit tit1 animate-element left-to-right" alt="">
-                    <img src="/dist/images/i_b2_t2.png" class="tit tit2 animate-element left-to-right" alt="">
-                    <img src="/dist/images/i_b2_t3.png" class="tit tit3 animate-element left-to-right" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="/dist/images/i_banner3.jpg">
-                    <img src="/dist/images/i_b3_t1.png" class="tit tit1 animate-element right-to-left" alt="">
-                    <img src="/dist/images/i_b3_t2.png" class="tit tit2 animate-element right-to-left" alt="">
-                    <img src="/dist/images/i_b3_t3.png" class="tit tit3 animate-element right-to-left" alt="">
-                </div>
+                <div class="swiper-slide"> <img src="/uploadfile/i_banner.jpg"> </div>
+                <div class="swiper-slide"> <img src="/uploadfile/i_banner.jpg"> </div>
+                <div class="swiper-slide"> <img src="/uploadfile/i_banner.jpg"> </div>
             </div>
             <div class="pagination"></div>
         </div>
@@ -31,28 +16,55 @@
                 <div class="en">PRODUCT DISPLAY</div>
             </div>
             <div class="inner clearfix">
-                <div class="i-pro-nav  animate-element bottom-to-top">
-                    {{for err_type}} {{if (#index+1)%2 == 0 }}
-                    <a href="#Products/index/catid/{{:catid}}">
-                  {{else}}
-                  <a class="fl" href="#Products/index/catid/{{:catid}}">
-                  {{/if}}
-                  {{:catname}}
-                    <i class="fa fa-angle-right" aria-hidden="true"></i>
-                  </a> {{/for}}
-                </div>
+                <div class="i-pro-nav  animate-element bottom-to-top"> <a class="fl" href="#">一般用途低中高压离心通风机
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </a> <a href="">屋顶通风机
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </a> <a class="fl" href="">电站工业锅炉用离心通引风机
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </a> <a href="">除尘器
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </a> <a class="fl" href="">物料输送风机
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </a> <a href="">风阀
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </a> <a class="fl" href="">排尘离心通风机
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </a> <a href="">一般用途轴流通风机
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </a> <a class="fl" href="">消防排烟通风机
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </a> <a href="">空调用通风机
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </a> <a class="fl" href="">斜流式通风机
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </a> <a href="">防腐通风机
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </a> </div>
                 <div class="i-pro-change  animate-element bottom-to-top">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
-                            {{for err_prolist}}
                             <div class="swiper-slide">
-                                <div class="pic clearfix container_aspectratio" data-aspectratio="1.17037037037037" data-aspecttype="thiswidth_height_auto" style="background:url(http://nuantong.wxlc.net/{{:photo}}) center; background-size:cover;"></div>
-                                <div class="clearfix"></div>
+                                <div class="pic"><img src="/uploadfile/i_pro_pic.jpg"></div>
                                 <div class="inner">
-                                    <div class="title">{{:title}}</div>
+                                    <div class="type">4-72 B4-72</div>
+                                    <div class="title">离心通风机</div>
                                 </div>
                             </div>
-                            {{/for}}
+                            <div class="swiper-slide">
+                                <div class="pic"><img src="/uploadfile/i_pro_pic.jpg"></div>
+                                <div class="inner">
+                                    <div class="type">4-72 B4-72</div>
+                                    <div class="title">离心通风机</div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="pic"><img src="/uploadfile/i_pro_pic.jpg"></div>
+                                <div class="inner">
+                                    <div class="type">4-72 B4-72</div>
+                                    <div class="title">离心通风机</div>
+                                </div>
+                            </div>
                         </div>
                         <div class="pagination"></div>
                     </div>
@@ -70,7 +82,7 @@
                     <div class="en animate-element bottom-to-top">ABOUT US</div>
                 </div>
                 <div class="content m_T60 animate-element bottom-to-top"> 哈尔滨市暖通风机厂位于哈尔滨市松北经济开发区，比邻美丽的松花江，工厂建于1986年。工厂占地面积15000平方米，厂房面积5000平方米。 哈尔滨暖通风机厂是哈尔滨风机产业的龙头企业，暖通产品已顺利通过ISO9001质量体系认证。哈尔滨暖通风机厂是黑龙江省风机协会理事单位、获得消防产品检验合格证，并获黑龙江省轻工业协会授予的“产品质量信得过企业”荣誉称号。工厂有大型... </div> <a class="more animate-element bottom-to-top"
-                    href="#About">了解更多</a> </div>
+                    href="">了解更多</a> </div>
         </div>
     </section>
     <section class="i_cooper">
@@ -83,7 +95,7 @@
                 <div class="content m_T20 animate-element bottom-to-top">
                     我厂还与哈尔滨电机厂，华能热电厂等多家大型企业合作，我们的风机产品深受这些知名企业的欢迎和好评…
                 </div>
-                <a href="#Cooper" class="more m_T20 animate-element bottom-to-top">了解更多</a>
+                <a href="" class="more m_T20 animate-element bottom-to-top">了解更多</a>
             </div>
             <div class="i_cooper_chage animate-element bottom-to-top">
                 <a href="javascript:void(0);" class="arrow-left"> <i class="fa fa-angle-left" aria-hidden="true"></i> </a>
@@ -91,33 +103,94 @@
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            {{for err_cooperlist}} {{if (#index+1)%4 == 0 }}
-                            <div class="item r">
-                                <a href="javascript:void(0)">
-                                    <div class="pic container_aspectratio" data-aspectratio="2.162303664921466" data-aspecttype="thiswidth_height_auto" style="background-image:url(http://nuantong.wxlc.net/{{:photo}});"></div>
+                            <div class="item">
+                                <a href="">
+                                    <img src="uploadfile/i_c_pic.png" alt="">
                                     <div class="bg"></div>
-                                    <div class="title">{{:title}}</div>
+                                    <div class="title">鸡西矿业集团</div>
+                                </a>
+                            </div>
+                            <div class="item r">
+                                <a href="">
+                                    <img src="uploadfile/i_c_pic.png" alt="">
+                                    <div class="bg"></div>
+                                    <div class="title">鸡西矿业集团</div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="">
+                                    <img src="uploadfile/i_c_pic.png" alt="">
+                                    <div class="bg"></div>
+                                    <div class="title">鸡西矿业集团</div>
+                                </a>
+                            </div>
+                            <div class="item r">
+                                <a href="">
+                                    <img src="uploadfile/i_c_pic.png" alt="">
+                                    <div class="bg"></div>
+                                    <div class="title">鸡西矿业集团</div>
                                 </a>
                             </div>
                         </div>
                         <div class="swiper-slide">
-                            {{else}} {{if (#index+1)%2 == 0 }}
-                            <div class="item r">
-                                <a href="javascript:void(0)">
-                                    <div class="pic container_aspectratio" data-aspectratio="2.162303664921466" data-aspecttype="thiswidth_height_auto" style="background-image:url(http://nuantong.wxlc.net/{{:photo}});"></div>
-                                    <div class="bg"></div>
-                                    <div class="title">{{:title}}</div>
-                                </a>
-                            </div>
-                            {{else}}
                             <div class="item">
-                                <a href="javascript:void(0)">
-                                    <div class="pic container_aspectratio" data-aspectratio="2.162303664921466" data-aspecttype="thiswidth_height_auto" style="background-image:url(http://nuantong.wxlc.net/{{:photo}});"></div>
+                                <a href="">
+                                    <img src="uploadfile/i_c_pic.png" alt="">
                                     <div class="bg"></div>
-                                    <div class="title">{{:title}}</div>
+                                    <div class="title">鸡西矿业集团</div>
                                 </a>
                             </div>
-                            {{/if}} {{/if}} {{/for}}
+                            <div class="item r">
+                                <a href="">
+                                    <img src="uploadfile/i_c_pic.png" alt="">
+                                    <div class="bg"></div>
+                                    <div class="title">鸡西矿业集团</div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="">
+                                    <img src="uploadfile/i_c_pic.png" alt="">
+                                    <div class="bg"></div>
+                                    <div class="title">鸡西矿业集团</div>
+                                </a>
+                            </div>
+                            <div class="item r">
+                                <a href="">
+                                    <img src="uploadfile/i_c_pic.png" alt="">
+                                    <div class="bg"></div>
+                                    <div class="title">鸡西矿业集团</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="item">
+                                <a href="">
+                                    <img src="uploadfile/i_c_pic.png" alt="">
+                                    <div class="bg"></div>
+                                    <div class="title">鸡西矿业集团</div>
+                                </a>
+                            </div>
+                            <div class="item r">
+                                <a href="">
+                                    <img src="uploadfile/i_c_pic.png" alt="">
+                                    <div class="bg"></div>
+                                    <div class="title">鸡西矿业集团</div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="">
+                                    <img src="uploadfile/i_c_pic.png" alt="">
+                                    <div class="bg"></div>
+                                    <div class="title">鸡西矿业集团</div>
+                                </a>
+                            </div>
+                            <div class="item r">
+                                <a href="">
+                                    <img src="uploadfile/i_c_pic.png" alt="">
+                                    <div class="bg"></div>
+                                    <div class="title">鸡西矿业集团</div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="pagination"></div>

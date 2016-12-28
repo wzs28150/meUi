@@ -1,0 +1,25 @@
+<article class="cooper animate-element fade-in" id="cooper">
+  <section class="a-banner" style="background-image:url(uploadfile/cooper_banner.jpg);">
+      <div class="container">
+          <div class="tit">合作单位</div>
+          <div class="content">我厂还与<i>哈尔滨电机厂，华能热电厂</i>等多家大型企业合作<br/>
+          我们的风机产品<i>深受这些知名企业</i>的欢迎和好评</div>
+      </div>
+  </section>
+  <section class="cooper-list">
+      <div class="containern">
+        {{for err_info}}
+        {{if #index%2 == 0 }}
+        <div class="item fr animate-element fade-in">
+        {{else}}
+        <div class="item fl animate-element fade-in">
+        {{/if}}
+          <img src="/{{:photo}}" alt="">
+          <p>{{:title}}</p>
+        </div>
+        {{/for}}
+        <div class="clearfix"></div>
+        <a class="loadmore" href="javascript:void(0);"><i class="fa fa-eye" aria-hidden="true"></i>查看更多</a>
+      </div>
+  </section>
+</article>

@@ -58,9 +58,10 @@
 	src: url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/32164/32164.gif?#iefix') format('embedded-opentype'), url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/32164/32164.bmp') format('woff'), url('') format('truetype'), url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/32164/32164.png#DarkBlack') format('svg');
 }
 @font-face {
-	font-family: 'HammerheadOutlineItalic';
-	src: url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/34943/34943.gif');
-	src: url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/34943/34943.gif?#iefix') format('embedded-opentype'), url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/34943/34943.bmp') format('woff'), url('') format('truetype'), url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/34943/34943.png#HammerheadOutlineItalic') format('svg');
+	font-family: 'hammerheadoutlineitalic';
+	src: local('hammerheadoutlineitalic'), url('hammerheadoutlineitalic-webfont') format('woff'), url('fonts/hammerheadoutlineitalic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }
 @font-face {
 	font-family: 'Source-Han-Light';

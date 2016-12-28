@@ -17,8 +17,8 @@ $(function() {
     //console.clear();
     meui.initModule({
         ishash: true,
-        url: 'http://nuantong.wxlc.net/',
-        api: 'api.php/',
+        url: 'json',
+        api: '',
         tpl: 'tpl',
         container: $('#main')
     });
@@ -427,8 +427,8 @@ meui.hashset = (function() {
         //console.log(stateMap.hasharry);
         getHash();
         //console.log(jqueryMap);
-        //meui.medel.initModule(jqueryMap);
-        meui.templates.initModule(jqueryMap);
+        meui.medel.initModule(jqueryMap);
+        //meui.templates.initModule(jqueryMap);
         meui.animated.initModule();
         //console.log(jqueryMap);
 
@@ -510,7 +510,7 @@ meui.templates = (function() {
             if (jqueryMap.$tempindex == 'show') {
                 $.get("./" + jqueryMap.$tpl + "/" + jqueryMap.$hashmain + "_main_tmp.html", function(tempdata) {
                     var Tmpl = $.templates(tempdata);
-                    var html = Tmpl.render();
+                    var html = Tmpl.render(data);
                     //$("title").html(data.err_title + "-哈尔滨市暖通风机");
                     $(jqueryMap.$container).html(html);
                     loadAction(data);
@@ -520,7 +520,7 @@ meui.templates = (function() {
                 //alert(1)
                 $.get("./" + jqueryMap.$tpl + "/" + jqueryMap.$hashmain + "_tmp.html", function(tempdata, textStauts) {
                     var Tmpl = $.templates(tempdata);
-                    var html = Tmpl.render();
+                    var html = Tmpl.render(data);
                     //$("title").html(data.err_catname + "-哈尔滨市暖通风机");
                     $(jqueryMap.$container).html(html);
                     loadAction(data);
@@ -532,7 +532,7 @@ meui.templates = (function() {
             $.get("./" + jqueryMap.$tpl + "/" + "Index_tmp.html", function(tempdata) {
                 var Tmpl = $.templates(tempdata);
                 //meui.medel.initModule(jqueryMap);
-                var html = Tmpl.render();
+                var html = Tmpl.render(data);
                 $("title").html("首页-哈尔滨市暖通风机");
                 $(jqueryMap.$container).html(html);
                 loadAction(data);
@@ -594,9 +594,14 @@ meui.medel = (function() {
     loadData = function() {
 
         if (jqueryMap.$hasharry != "") {
-            var url = jqueryMap.$url + jqueryMap.$api + jqueryMap.$hasharry[1];
+            if (jqueryMap.$tempindex == "show") {
+                var url = jqueryMap.$url + jqueryMap.$api + '/' + jqueryMap.$hashmain + '_show.json';
+            } else {
+                var url = jqueryMap.$url + jqueryMap.$api + '/' + jqueryMap.$hashmain + '.json';
+            }
+
         } else {
-            var url = jqueryMap.$url + jqueryMap.$api;
+            var url = jqueryMap.$url + jqueryMap.$api + '/Index.json';
         }
         $.getJSON(url, function(data) {
             if ('118' === data.err_code) {
@@ -606,7 +611,7 @@ meui.medel = (function() {
 
     };
     initModule = function($setting) {
-        //console.log($setting);
+        console.log($setting);
         stateMap.url = $setting.$url;
         stateMap.api = $setting.$api;
         stateMap.hasharry = $setting.$hasharry;
@@ -1701,7 +1706,7 @@ var Swiper = function(selector, params) {
     /*==========================================
         Mousewheel Control
     ============================================*/
-    var lastScrollTime = (new Date()).getTime();
+    var laststScrollTime = (new Date()).getTime();
 
     function handleMousewheel(e) {
         var we = _this._wheelEvent;

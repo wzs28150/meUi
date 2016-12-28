@@ -287,7 +287,6 @@ meui.Nav = (function() {
 
     };
     initModule = function(i) {
-        console.log(i);
         if (i != undefined) {
             $('header .inner nav a').removeClass('on');
             $('header .inner nav a').eq(i).addClass('on');

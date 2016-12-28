@@ -8,22 +8,16 @@
   </section>
   <section class="cooper-list">
       <div class="containern">
-        <div class="item fl">
-          <img src="uploadfile/cooper_pic.png" alt="">
-          <p>鸡西矿业集团</p>
+        {{for err_info}}
+        {{if #index%2 == 0 }}
+        <div class="item fr animate-element fade-in">
+        {{else}}
+        <div class="item fl animate-element fade-in">
+        {{/if}}
+          <img src="/{{:photo}}" alt="">
+          <p>{{:title}}</p>
         </div>
-        <div class="item fr">
-          <img src="uploadfile/cooper_pic.png" alt="">
-          <p>鸡西矿业集团</p>
-        </div>
-        <div class="item fl">
-          <img src="uploadfile/cooper_pic.png" alt="">
-          <p>鸡西矿业集团</p>
-        </div>
-        <div class="item fr">
-          <img src="uploadfile/cooper_pic.png" alt="">
-          <p>鸡西矿业集团</p>
-        </div>
+        {{/for}}
         <div class="clearfix"></div>
         <a class="loadmore" href="javascript:void(0);"><i class="fa fa-eye" aria-hidden="true"></i>查看更多</a>
       </div>

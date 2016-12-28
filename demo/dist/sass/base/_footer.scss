@@ -1,0 +1,22 @@
+@charset "utf-8";
+@import "base/opacity";
+footer{ width: 100%; height: 540px;  color:#cbcbcb;
+	.footer-main{ height: 488px;background:url(../images/footer_bg.jpg) no-repeat bottom center; background-attachment: fixed;
+		.f_t{ height: 366px; border-bottom: 1px solid #766f6d;
+			.f_nav{ padding-top: 108px;
+				a{ color: #fff; text-align: center; display: block; float: left;
+					img{ display: block; margin: 0 auto 10px;}
+					.ch{ font-size: 20px; line-height: 44px;}
+					.en{ font-size: 13px; font-weight: lighter; line-height: 24px;}
+				}
+				span{ float: left; display: block; width: 220px;height: 115px; background: url(../images/f_jian.png) no-repeat center;}
+			}
+			.erw{ padding-top: 118px;
+				p{font-size: 14px;color: #fff; line-height: 42px; text-align: center;}
+			}
+		}
+		.f_b{ height: 95px; text-align: center; line-height: 34px; font-size: 14px; padding-top: 26px; color:#fff;	}
+	}
+	.bar{ height: 52px; background: #000; line-height: 52px; font-size: 12px;}
+}
+.backtotop{width: 50px; height: 50px; background: url(../images/backtotop.png) no-repeat center; background-size: cover;position: fixed; bottom:80px; right: 10px; z-index: 99;display: block; box-shadow:0 0 1px #ccc; border-radius: 10px; overflow: hidden;}

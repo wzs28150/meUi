@@ -47,34 +47,10 @@
 	font-weight: 400;
 	src: local('417-CAI978'), local('417-CAI978'), url(fonts/417-CAI978.woff) format('woff');
 }
-@font-face {
-	font-family: 'Malapropism';
-	src: url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/37509/37509.gif');
-	src: url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/37509/37509.gif?#iefix') format('embedded-opentype'), url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/37509/37509.bmp') format('woff'), url('') format('truetype'), url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/37509/37509.png#Malapropism') format('svg');
-}
-@font-face {
-	font-family: 'DarkBlack';
-	src: url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/32164/32164.gif');
-	src: url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/32164/32164.gif?#iefix') format('embedded-opentype'), url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/32164/32164.bmp') format('woff'), url('') format('truetype'), url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/32164/32164.png#DarkBlack') format('svg');
-}
+
 @font-face {
 	font-family: 'hammerheadoutlineitalic';
-	src: local('hammerheadoutlineitalic'), url('hammerheadoutlineitalic-webfont') format('woff'), url('fonts/hammerheadoutlineitalic.ttf') format('truetype');
+	src: local('hammerheadoutlineitalic'), url('fonts/hammerheadoutlineitalic-webfont.woff') format('woff'), url('fonts/hammerheadoutlineitalic.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
-}
-@font-face {
-	font-family: 'Source-Han-Light';
-	src: url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/46865/46865.gif');
-	src: url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/46865/46865.gif?#iefix') format('embedded-opentype'), url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/46865/46865.bmp') format('woff'), url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/46865/46865.jpg') format('truetype'), url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/46865/46865.png#Source-Han-Light') format('svg');
-}
-@font-face {
-	font-family: 'minijianyaya';
-	src: url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/19540/19540.gif');
-	src: url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/19540/19540.gif?#iefix') format('embedded-opentype'), url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/19540/19540.bmp') format('woff'), url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/19540/19540.jpg') format('truetype'), url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/19540/19540.png#minijianyaya') format('svg');
-}
-@font-face {
-	font-family: 'minijianlinxin';
-	src: url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/19518/19518.gif');
-	src: url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/19518/19518.gif?#iefix') format('embedded-opentype'), url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/19518/19518.bmp') format('woff'), url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/19518/19518.jpg') format('truetype'), url('http://youzikuwebfont.oss-cn-beijing.aliyuncs.com/webfonts/css/youziku/19518/19518.png#minijianlinxin') format('svg');
 }

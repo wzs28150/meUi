@@ -11,6 +11,7 @@
   + `meUI.js` -- Core JS file
   + `meUI.action.js` -- Controller file  
 
+`json/` -- JSON data file  
 `tpl/` -- template file  
 `tpl/` -- uploadfile
 

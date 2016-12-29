@@ -484,6 +484,7 @@ meui.templates = (function() {
             var Tmpl = $.templates(tempdata);
             //console.log(jquerydata);
             var html = Tmpl.render();
+            $("title").html("加载中-meUI");
             $(jqueryMap.$container).html(html);
             $('article').addClass('in-viewport');
             reload();
@@ -525,7 +526,7 @@ meui.templates = (function() {
                 var Tmpl = $.templates(tempdata);
                 //meui.medel.initModule(jqueryMap);
                 var html = Tmpl.render(data);
-                $("title").html("首页-哈尔滨市暖通风机");
+                $("title").html("首页-meUI");
                 $(jqueryMap.$container).html(html);
                 loadAction(data);
                 $('article').addClass('in-viewport');

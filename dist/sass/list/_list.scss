@@ -1,1 +1,12 @@
 @charset "utf-8";
+.pro_pic_list{
+  .tit{ text-align: center; font-size: 34px; line-height: 2em; padding: 1em;}
+  .item{ width: 25%; float: left;
+    .pic{ background: green; height: 300px; margin: 5px;}
+    .title{ margin: 5px;
+      span{
+        i{ margin-right: 5px;}
+      }
+    }
+  }
+}

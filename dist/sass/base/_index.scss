@@ -1,6 +1,6 @@
 /* CSS Document */
 
-#banner{width:100%;float:left;height:650px;text-align:center;overflow:hidden;position:relative;
+#banner{width:100%;float:left;height:650px;text-align:center;overflow:hidden;position:relative;    background: #3566f2;
 	.swiper-slide{width:100%;float:left;height:650px;}
  	.swiper-slide1 { background: #3566f2;}
 	.arrow-left{ background: url(../images/arrows.png) no-repeat left top;position:absolute;left:10px;top:55%;margin-top:-15px;width:17px;height:30px;z-index:999;}
@@ -17,5 +17,4 @@
 	.mainbtn{text-align:center;margin-top:50px;
 		a{font-size:16px;color:#3566f2;margin:20px auto;padding:10px 25px;background:#fff;border-radius:20px;text-decoration:none;}
 	}
-}  
- 
+}

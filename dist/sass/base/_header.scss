@@ -1,9 +1,9 @@
 @charset "utf-8";
 @import "base/opacity";
 header{
-	height:60px; 
+	height:60px;
 	&.dark{
-		background-color: #222;	
+		background-color: #222;
 		a{color: #9d9d9d;
 			&:hover{
 				color:#fff;transition:all .4s,transform .4s;
@@ -11,13 +11,13 @@ header{
 		}
 	}
 	&.light{
-		background-color: #fff;	
+		background-color: #fff;
 		.logo{ color:#5579ed;}
 		a{color: #5579ed;
 			&:hover{
-				background:#0b76ac;transition:all .4s,transform .4s;
+				background:#0b76ac; color: #fff;transition:all .4s,transform .4s;
 			}
-		}	
+		}
 		.navbar-toggle .icon-bar{background-color:#5579ed;display:block;width:22px;height:2px;border-radius:1px;}
 	}
 	&.blue{
@@ -28,10 +28,10 @@ header{
 			}
 		}
 	}
-	.logo{ height:60px; line-height:60px; font-size:32px; font-family: HammerheadOutlineItalic; 
+	.logo{ height:60px; line-height:60px; font-size:32px; font-family: HammerheadOutlineItalic;
 		img{ display:block; }
 	}
-	nav{ height:60px; 
+	nav{ height:60px;
 		a{ height:60px; line-height:60px; display:inline-block; padding:0 20px;  }
 	}
 	.navbar-toggle{position: absolute;padding:9px 10px;margin:13px 0;background-color:transparent;background-image:none;border:1px solid #ADADAD;border-radius:4px; display:none; right:5%; top:0;}

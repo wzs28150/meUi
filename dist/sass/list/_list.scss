@@ -1,22 +1,27 @@
 @charset "utf-8";
-.pro_pic_list{
+.pro_pic_list{ overflow: hidden;
   .tit{ text-align: center; font-size: 34px; line-height: 2em; padding: 1em;}
   .item{ width: 25%; float: left;
-    a{ display: block;width: 100%; height: 100%;
-      .pic{ background: green; height: 300px; margin: 5px; position: relative; z-index: 1; overflow: hidden;
+    a{ display: block;box-shadow: 0 0 5px #ccc; margin: 5px; overflow: hidden;
+      .pic{ background: #ccc; height: 300px;  position: relative; z-index: 1; overflow: hidden;
         .bg{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #ccc; visibility: hidden;zoom:1;filter:alpha(opacity=0); opacity: 0;transition:all 0.4s ease-in-out; transform: scale(0.1); z-index: 2;pointer-events:auto;}
         .logo-ico{ position: absolute; left: 0; width: 100%; z-index: 3;text-align: center; line-height: 2em; top: 50%; margin-top: -1em; font-size: 36px; color: #fff;font-family: 'HammerheadOutlineItalic'; visibility: hidden;zoom:1;filter:alpha(opacity=0); opacity: 0.1; transform: scale(3); transition:all 0.4s ease-in-out 0.2s;
           -webkit-backface-visibility: hidden;-moz-backface-visibility: hidden;-ms-backface-visibility: hidden;  -o-backface-visibility: hidden; backface-visibility: hidden;pointer-events:auto;}
       }
-      .title{ margin: 5px;
+      .title{ margin: 10px; line-height: 2em;
         span{
-          i{ margin-right: 5px;}
+          i{ margin-right: 5px;transition:all 0.4s ease-in-out;}
         }
       }
       &:hover{
         .pic{
-          .bg{ visibility:visible;filter:alpha(opacity=100); opacity: 1;transition:all 0.4s ease-in-out; transform: scale(1);}
-          .logo-ico{ visibility: visible;filter:alpha(opacity=100); opacity: 1; transform: scale(1);transition:all 0.4s ease-in-out 0.2s;}
+          .bg{ visibility:visible;filter:alpha(opacity=100); opacity: 1; transform: scale(1);}
+          .logo-ico{ visibility: visible;filter:alpha(opacity=100); opacity: 1; transform: scale(1);}
+        }
+        .title{
+          span{
+            i{ transform: rotate(360deg);}
+          }
         }
       }
     }

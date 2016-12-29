@@ -79,9 +79,7 @@ meui.About_action = (function() {
         setJqueryMap,
         initModule;
     setJqueryMap = function() {};
-    initModule = function($data, $setting) {
-        meui.Nav.initModule(4);
-    };
+    initModule = function($data, $setting) {};
     return {
         initModule: initModule,
     };

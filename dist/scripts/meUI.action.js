@@ -41,7 +41,7 @@ meui.Index_action = (function() {
         if (meui.exists('#bannerSwiper')) {
             var mySwiper = new Swiper('#bannerSwiper', {
                 loop: true,
-                autoplay: 5000,
+                //autoplay: 5000,
                 speed: 2000,
                 pagination: '#bannerpagination',
                 paginationClickable: true,
@@ -139,12 +139,12 @@ meui.Nav = (function() {
     };
     initModule = function(i) {
         if (i != undefined) {
-            $('header .inner nav a').removeClass('on');
-            $('header .inner nav a').eq(i).addClass('on');
+            $('header nav a').removeClass('on');
+            $('header nav a').eq(i).addClass('on');
         } else {
-            $('header .inner nav a').click(function() {
+            $('header  nav a').click(function() {
                 //alert(1)
-                $('header .inner nav a').removeClass('on');
+                $('header  nav a').removeClass('on');
                 $(this).addClass('on');
             });
         }

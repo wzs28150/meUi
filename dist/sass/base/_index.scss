@@ -1,7 +1,9 @@
 /* CSS Document */
 
 #banner{width:100%;float:left;height:650px;text-align:center;overflow:hidden;position:relative;    background: #3566f2;
-	.swiper-slide{width:100%;float:left;height:650px;}
+	.swiper-slide{width:100%;float:left;height:650px;
+		.inner{ overflow: hidden; height: 100%;}
+	}
  	.swiper-slide1 { background: #3566f2;}
 	.arrow-left{ background: url(../images/arrows.png) no-repeat left top;position:absolute;left:10px;top:55%;margin-top:-15px;width:17px;height:30px;z-index:999;}
 	.arrow-right{background:url(../images/arrows.png) no-repeat left bottom;position:absolute;right:10px;top:55%;margin-top:-15px;width:17px;height:30px;z-index:999;}

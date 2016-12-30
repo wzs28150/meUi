@@ -566,7 +566,7 @@ meui.templates = (function() {
         loadtemplates();
         setTimeout(function() {
             settemplates(data);
-        }, 2500);
+        }, 2400);
     };
     //console.log(configMap);
     return {

@@ -62,22 +62,22 @@
     </section>
     <section class="i_news news_pic_list clearfix">
         <div class="contnern">
-            <div class="tit animate-element bottom-to-top">图片列表</div>
-            {{for i_pro_list}}
+            <div class="tit animate-element bottom-to-top">图文列表</div>
+            {{for i_np_list}}
             <div class="item animate-element bottom-to-top">
                 <a href="#">
                     <div class="pic">
                         <div class="bg"></div>
                         <div class="logo-ico">MEUI</div>
                     </div>
-                    <div class="title">{{:title}}<span class="fr"><i class="fa fa-clock-o" aria-hidden="true"></i>{{:inputtime}}</span></div>
+                    <div class="inner">
+                        <div class="title">{{:title}}</div>
+                        <div class="content">{{:content}}</div>
+                    </div>
                 </a>
             </div>
             {{/for}}
             <div class="clearfix"></div>
         </div>
     </section>
-</article>
-</div>
-</section>
 </article>

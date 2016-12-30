@@ -451,7 +451,7 @@ meui.templates = (function() {
         },
         initModule,
         jqueryMap = {},
-        setJqueryMap, jqueryMap, settemplates, loadtemplates, loadAction, reload;
+        setJqueryMap, jqueryMap, settemplates, loadtemplates, loadAction, reload, svgan;
     setJqueryMap = function() {
         var $hashmain = stateMap.hashmain;
         var $tpl = stateMap.tpl;
@@ -486,10 +486,32 @@ meui.templates = (function() {
             var html = Tmpl.render();
             $("title").html("加载中-meUI");
             $(jqueryMap.$container).html(html);
+            svgan();
             $('article').addClass('in-viewport');
             reload();
         });
     };
+    svgan = function() {
+        $('.squiggle-animated path').each(function(i) {
+            var path = $(this)[0];
+            var length = path.getTotalLength();
+            // Clear any previous transition
+            path.style.transition = path.style.WebkitTransition =
+                'none';
+            // Set up the starting positions
+            path.style.strokeDasharray = length + ' ' + length;
+            path.style.strokeDashoffset = length;
+            // Trigger a layout so styles are calculated & the browser
+            // picks up the starting position before animating
+            path.getBoundingClientRect();
+            // Define our transition
+            path.style.transition = path.style.WebkitTransition =
+                'stroke-dashoffset 2s ease-in-out';
+            // Go!
+            path.style.strokeDashoffset = '0';
+        });
+
+    }
     reload = function() {
         //alert(1)
         $('html, body').animate({
@@ -544,7 +566,7 @@ meui.templates = (function() {
         loadtemplates();
         setTimeout(function() {
             settemplates(data);
-        }, 500);
+        }, 2500);
     };
     //console.log(configMap);
     return {

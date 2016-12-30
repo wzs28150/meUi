@@ -40,7 +40,9 @@
       }
       .inner{height: 220px; padding-left: 380px; overflow: hidden;
         .title{ font-size: 20px; margin: 10px 0;}
-        .content{ font-size: 14px; line-height: 1.5em;}
+        .content{ font-size: 14px; line-height: 1.5em; height:9em; overflow:hidden; zoom:1;
+          .content_con{float:left; height:9em; margin-right:3em; overflow:hidden;}
+        }
       }
       &:hover{
         .pic{

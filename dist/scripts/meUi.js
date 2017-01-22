@@ -241,6 +241,98 @@ meui.animated = (function($) {
         initModule: initModule
     };
 }(jQuery));
+
+meui.html_overflow = (function() {
+	"use strict";
+	var initModule;
+	initModule = function(boolen) {
+		if (boolen) { $('html').css('overflow-y', 'scroll'); } else { $('html').css('overflow', 'hidden'); }
+	};
+	return {initModule: initModule};
+}());
+
+meui.urlpush = (function() {
+	"use strict";
+	var state = {
+			title: '',
+			url: ''
+		},
+		initModule;
+	initModule = function(title, url) {
+		state.title = title;
+		state.url = url;
+		window.history.pushState(state, title, url);
+	};
+	return {initModule: initModule};
+}());
+
+//判断ie 包括ie 10,11
+meui.isIE = (function() {
+	"use strict";
+	var initModule;
+	initModule = function() {
+		if (!!window.ActiveXObject || "ActiveXObject" in window) {
+			return true;
+		} else {
+			return false;
+		}
+	};
+	return {initModule: initModule};
+}());
+//加载外部js
+meui.loadScript = (function() {
+	"use strict";
+	var initModule,
+		parallelLoadScripts;
+	parallelLoadScripts = function(scripts, callback) {
+		if (typeof(scripts) != "object")
+			var scripts = [scripts];
+		var HEAD = document.getElementsByTagName("head").item(0) || document.documentElement,
+			s = new Array(),
+			loaded = 0;
+		for (var i = 0; i < scripts.length; i++) {
+			s[i] = document.createElement("script");
+			s[i].setAttribute("type", "text/javascript");
+			s[i].onload = s[i].onreadystatechange = function() { //Attach handlers for all browsers
+				if (!/*@cc_on!@*/
+				0 || this.readyState == "loaded" || this.readyState == "complete") {
+					loaded++;
+					this.onload = this.onreadystatechange = null;
+					this.parentNode.removeChild(this);
+					if (loaded == scripts.length && typeof(callback) == "function")
+						callback();
+					}
+				};
+			s[i].setAttribute("src", scripts[i]);
+			HEAD.appendChild(s[i]);
+		}
+	};
+	initModule = function(url, callback) {
+		parallelLoadScripts(url, callback)
+	};
+	return {initModule: initModule};
+}());
+//加载外部css
+meui.loadcss = (function() {
+	"use strict";
+	var initModule,
+		dynamicLoading;
+	dynamicLoading = function(path) {
+		if (!path || path.length === 0) {
+			throw new Error('argument "path" is required !');
+		}
+		var head = document.getElementsByTagName('head')[0];
+		var link = document.createElement('link');
+		link.href = path;
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		head.appendChild(link);
+	}
+	initModule = function(path) {
+		dynamicLoading(path)
+	};
+	return {initModule: initModule};
+}());
 //shell
 meui.shell = (function() {
     "use strict";
@@ -440,6 +532,34 @@ meui.hashset = (function() {
         initModule: initModule
     };
 }());
+
+meui.action = (function() {
+	"use strict";
+	var loadAction,
+		initModule;
+	loadAction = function($action) {
+		var actionstr = 'meui.' + $action + '_action.initModule();';
+		var bar = eval;
+		//evil(actionstr);
+		bar(actionstr);
+		meui.aspectratio.initModule({});
+	};
+	initModule = function($action, load) {
+		//meui.loadScript.initModule(load,loadAction($action));
+		var jsstr = 'var scripts = ["dist/scripts/package/compat/prefixfree.min.js", "dist/scripts/package/render/jsrender.js","dist/scripts/lib/'+$action+'Action.class.js"];';
+		var bar = eval;
+		bar(jsstr);
+		meui.loadScript.initModule(scripts, function () {
+			loadAction($action);
+		});
+
+		meui.aspectratio.initModule({});
+		meui.animated.initModule();
+		//入口回调
+		meui.Callback.initModule();
+	};
+	return {initModule: initModule};
+}());
 //加载模板
 meui.templates = (function() {
     "use strict";
@@ -466,14 +586,15 @@ meui.templates = (function() {
     };
     //加载控制器
     loadAction = function(data) {
-        var actionstr = '';
         if (jqueryMap.$hashmain) {
-            actionstr = 'meui.' + jqueryMap.$hashmain + '_action.initModule(data,jqueryMap);';
+            //actionstr = 'meui.' + jqueryMap.$hashmain + '_action.initModule(data,jqueryMap);';
+            meui.action.initModule(jqueryMap.$hashmain);
         } else {
-            actionstr = 'meui.Index_action.initModule(data,jqueryMap);';
+            //actionstr = 'meui.Index_action.initModule(data,jqueryMap);';
+            meui.action.initModule('Index');
+
         }
         //console.log(jqueryMap.$hashmain);
-        eval(actionstr);
         meui.aspectratio.initModule({});
 
 
@@ -563,10 +684,14 @@ meui.templates = (function() {
         stateMap.tempindex = $setting.$tempindex;
         //console.log($setting);
         setJqueryMap();
-        loadtemplates();
-        setTimeout(function() {
-            settemplates(data);
-        }, 2400);
+        var scripts = ["dist/scripts/package/render/jsrender.js"];
+    		meui.loadScript.initModule(scripts, function () {
+          loadtemplates();
+          setTimeout(function() {
+              settemplates(data);
+          }, 2400);
+    		});
+
     };
     //console.log(configMap);
     return {
@@ -636,5 +761,108 @@ meui.medel = (function() {
     //console.log(configMap);
     return {
         initModule: initModule
+    };
+}());
+
+meui.Backtotop = (function() {
+    "use strict";
+    var stateMap = {},
+        jqueryMap = {},
+        setJqueryMap,
+        initModule, backtotop, backbuttonshow;
+    setJqueryMap = function() {};
+    backbuttonshow = function() {
+        if ($(window).scrollTop() > 600) {
+            $("#back-to-top").fadeIn(500);
+        } else {
+            $("#back-to-top").fadeOut(500);
+        }
+    };
+    backtotop = function() {
+        $('body,html').stop().animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    };
+    initModule = function() {
+        $("#back-to-top").hide();
+        $(window).scroll(function() {
+            backbuttonshow();
+        });
+        $("#back-to-top").click(function() {
+            backtotop();
+        });
+    };
+    return {
+        initModule: initModule,
+    };
+}());
+meui.Nav = (function() {
+    "use strict";
+    var stateMap = {},
+        jqueryMap = {},
+        setJqueryMap,
+        initModule, navOn, navToggle;
+    setJqueryMap = function() {};
+    navToggle = function() {
+        $('header .navbar-toggle').click(function() {
+            if ($("header nav").is(":hidden")) {
+                $("header nav").slideDown(); //如果元素为隐藏,则将它显现
+            } else {
+                $("header nav").slideUp(); //如果元素为显现,则将其隐藏
+            }
+            $("header nav a").removeClass("in-viewport");
+            $("header nav a").click(function() {
+                if ($("header nav").is(":hidden")) {
+                    $("header nav").slideDown(); //如果元素为隐藏,则将它显现
+                } else {
+                    $("header nav").slideUp(); //如果元素为显现,则将其隐藏
+                }
+            });
+            $("header nav a").each(function(e) {
+                var a = $(this);
+                a.hasClass("in-viewport") || setTimeout(function() {
+                    a.addClass("in-viewport")
+                }, 100 * e)
+            });
+        });
+    };
+    initModule = function(i) {
+        if (i != undefined) {
+            $('header nav a').removeClass('on');
+            $('header nav a').eq(i).addClass('on');
+        } else {
+            $('header  nav a').click(function() {
+                //alert(1)
+                $('header  nav a').removeClass('on');
+                $(this).addClass('on');
+            });
+        }
+        if ($(window).width() < 960) {
+            navToggle();
+        }
+        $(window).resize(function() {
+            if ($(window).width() < 960) {
+                navToggle();
+            }
+        });
+    };
+    return {
+        initModule: initModule,
+    };
+}());
+meui.Callback = (function() {
+    "use strict";
+    var stateMap = {},
+        jqueryMap = {},
+        setJqueryMap,
+        initModule;
+    setJqueryMap = function() {};
+    initModule = function() {
+        meui.Backtotop.initModule();
+        meui.Nav.initModule();
+    };
+    return {
+        initModule: initModule,
     };
 }());

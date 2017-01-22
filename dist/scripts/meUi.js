@@ -9,9 +9,15 @@
 //meui.shell 插件模块主方法
 //meui.hashset 处理hash
 //meui.templates 处理模板碎片
-//meui.loadMore 加载更多
 //meui.medel 处理模型层
-//Swiper 图片切换插件
+//meui.loadMore 加载更多
+	/*(例 ：meui.loadMore.initModule(9, 3, '.list .item', '.loadmore');)*/
+//meui.isIE 判断ie 包括ie 10,11
+//meui.loadScript 加载外部js
+//meui.loadcsss 加载外部css
+//meui.urlpush url推送
+//meui.action 加载控制器入口
+//meui.html_overflow.initModule() 处理滚动条
 
 
 $(function() {

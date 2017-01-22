@@ -38,7 +38,7 @@ var meui = (function() {
     "use strict";
     var initModule = function($setting) {
         meui.shell.initModule($setting);
-        //meui.copyright.initModule();
+        meui.copyright.initModule();
         meui.aspectratio.initModule({});
         meui.animated.initModule();
         //入口回调
@@ -58,16 +58,16 @@ meui.copyright = (function() {
     "use strict";
     var initModule = function() {
         var _content = '';
-        //  _content = '
-        //  ,;:,     :::.     ;:; ;rr;r;;:::;:    :JXXFi.
-        //  ,BMB    ZBBBM    RBBE MBMBBBMBMBMB  OBMBMBMBMBr
-        //   DBMJ   BMBBBu   MBM        :BBMK  FBMU     MMB
-        //    MBM  WMB RMB  xBMJ       RMBM.   :BBMBEu:
-        //    RMB  MBH .BML BBB      FBMB;       ;RMBMBMBB;
-        //     BMDXBM   MBMcMB3    rMBMJ              .7MBM7
-        //     MBMBBS   .MBMBM   ,BMBK         MBMi     RMBL
-        //     :MBMB     RMBMX   BMBMBMBMBBBMB .MBMBBBBBMB2
-        //      ,..       ,.,    ..  .,,:,::::    .iLLL:     ';
+         _content = '
+         ,;:,     :::.     ;:; ;rr;r;;:::;:    :JXXFi.
+         ,BMB    ZBBBM    RBBE MBMBBBMBMBMB  OBMBMBMBMBr
+          DBMJ   BMBBBu   MBM        :BBMK  FBMU     MMB
+           MBM  WMB RMB  xBMJ       RMBM.   :BBMBEu:
+           RMB  MBH .BML BBB      FBMB;       ;RMBMBMBB;
+            BMDXBM   MBMcMB3    rMBMJ              .7MBM7
+            MBMBBS   .MBMBM   ,BMBK         MBMi     RMBL
+            :MBMB     RMBMX   BMBMBMBMBBBMB .MBMBBBBBMB2
+             ,..       ,.,    ..  .,,:,::::    .iLLL:     ';
         console.log(_content);
     };
     return {

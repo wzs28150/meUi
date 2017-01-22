@@ -641,7 +641,7 @@ meui.templates = (function() {
         //$('#spa').fadeIn();
     };
     settemplates = function(data) {
-        console.log(jqueryMap.$hashmain);
+        //console.log(jqueryMap.$hashmain);
         if (jqueryMap.$hashmain != '') {
             if (jqueryMap.$tempindex == 'show') {
                 $.get("./" + jqueryMap.$tpl + "/" + jqueryMap.$hashmain + "_main_tmp.html", function(tempdata) {

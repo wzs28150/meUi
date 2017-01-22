@@ -657,7 +657,7 @@ meui.templates = (function() {
                 $.get("./" + jqueryMap.$tpl + "/" + jqueryMap.$hashmain + "_tmp.html", function(tempdata, textStauts) {
                     var Tmpl = $.templates(tempdata);
                     var html = Tmpl.render(data);
-                    //$("title").html(data.err_catname + "-哈尔滨市暖通风机");
+                    $("title").html(data.err_catname + "-meui");
                     $(jqueryMap.$container).html(html);
                     loadAction(data);
                     meui.aspectratio;

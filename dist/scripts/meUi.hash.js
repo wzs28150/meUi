@@ -33,12 +33,13 @@ var meui = (function() {
     "use strict";
     var initModule = function($setting) {
       meui.loadScript.initModule($setting.alis, function () {
+        meui.Callback.initModule();
         meui.shell.initModule($setting);
         //meui.copyright.initModule();
         meui.aspectratio.initModule({});
         meui.animated.initModule();
         //入口回调
-        meui.Callback.initModule();
+
   		});
 
 

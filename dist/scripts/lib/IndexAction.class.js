@@ -33,6 +33,7 @@ meui.Index_action = (function() {
     };
     initModule = function($data, $setting) {
         //meui.Nav.initModule(0);
+        $("title").html("首页-meUI");
 				var scripts = ["dist/scripts/package/swiper/v3/swiper.min.js"];
 				meui.loadScript.initModule(scripts, function() {
 	        indexBanner();

@@ -640,7 +640,6 @@ meui.templates = (function() {
                 var Tmpl = $.templates(tempdata);
                 //meui.medel.initModule(jqueryMap);
                 var html = Tmpl.render(data);
-                
                 $(jqueryMap.$container).html(html);
                 loadAction(data);
                 $('article').addClass('in-viewport');

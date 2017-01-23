@@ -66,23 +66,23 @@ meui.Nav = (function() {
 		navToggle,navaTogge;
 	setJqueryMap = function() {};
 	navToggle = function() {
-		$('header .navbar-toggle').click(function(e) {
-      e.stopPropagation();
 			if ($("header nav").is(":hidden")) {
 				$("header nav").slideDown(); //如果元素为隐藏,则将它显现
+        $('main').addClass('on');
 			} else {
 				$("header nav").slideUp(); //如果元素为显现,则将其隐藏
+        $('main').removeClass('on');
 			}
-
-		});
 	};
   navaTogge = function(){
     $("header nav a").removeClass("in-viewport");
     $("header nav a").click(function() {
       if ($("header nav").is(":hidden")) {
         $("header nav").slideDown(); //如果元素为隐藏,则将它显现
+        $('main').addClass('on');
       } else {
-        $("header nav").slideUp(); //如果元素为显现,则将其隐藏
+        $("header nav").hide(); //如果元素为显现,则将其隐藏
+        $('main').removeClass('on');
       }
     });
     $("header nav a").each(function(e) {
@@ -104,13 +104,21 @@ meui.Nav = (function() {
 			});
 		}
 		if ($(window).width() < 960) {
-			navToggle();
-      navaTogge();
+      $('header .navbar-toggle').unbind('click').click(function(e) {
+        e.stopPropagation();
+			  navToggle();
+        navaTogge();
+      });
+
 		}
 		$(window).resize(function() {
 			if ($(window).width() < 960) {
-				navToggle();
-        navaTogge();
+        $('header .navbar-toggle').unbind('click').click(function(e) {
+          e.stopPropagation();
+  			  navToggle();
+          navaTogge();
+        });
+
 			}
 		});
 	};

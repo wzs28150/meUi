@@ -739,14 +739,14 @@ meui.component = (function() {
   Load = function(){
     var Tmpl = $.templates(stateMap.Tmpl);
     var html = Tmpl.render(stateMap.data);
-    stateMap.el.show().html(html);
+    stateMap.el.html(html);
   };
   initModule = function($setting) {
     stateMap.el = $($setting.el);
     stateMap.Tmpl = $setting.tmpl;
     stateMap.data = $setting.data;
     stateMap.methods = $setting.methods;
-    stateMap.el.hide().html('');
+    stateMap.el.html('');
     Load();
   };
   return {

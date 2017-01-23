@@ -15,11 +15,11 @@
 
 
 @include max-screen(1366px) {
-	
+
 }
 
 @include max-screen(1360px) {
-	
+
 }
 @include max-screen(1280px) {
 	.contner{ width:1200px;}
@@ -36,10 +36,10 @@
 	.contnern{ width:90%; padding:0 5%;}
 }
 @include max-screen(960px) {
-	header{ height:auto;
-		nav{ width:100%;  height:auto; display:none;
-			a{ display:block; width:100%; padding:0 5%; margin:0 -5%;}
-			
+	header{ height:auto; z-index: 9999999999999999;position: relative;
+		nav{ width:100%;  height:auto; display:none; position: fixed; top: 60px; left: 0; background: #fff; float:none;  z-index: 9999999999999998;
+			a{ display:block; width:100%; padding:0 5%;}
+
 		}
 		.navbar-toggle{ display:block;}
 		&.dark{
@@ -53,11 +53,11 @@
 			nav a:before{content:"";display:block;position:absolute;left:-50%;width:200%;height:1px;background:#ADADAD;-webkit-transform:scale(0.5);}
 		}
 	}
-	
+  main.on{ opacity: .5;}
 }
 @include max-screen(360px) {
 
 }
 @include max-screen(320px) {
-	
+
 }

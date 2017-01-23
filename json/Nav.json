@@ -3,7 +3,7 @@
   "navlist": [{
       "catid": "22",
       "title": "首页",
-      "target": "#Index"
+      "target": "#"
   },{
       "catid": "22",
       "title": "关于我们",

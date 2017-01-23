@@ -24,7 +24,7 @@ $(function() {
         api: '',
         tpl: 'tpl',
         container: $('#main'),
-        alis:["dist/scripts/package/compat/prefixfree.min.js", "dist/scripts/package/render/jsrender.min.js"]
+        alis:["dist/scripts/package/render/jsrender.min.js"]
     });
 
 });

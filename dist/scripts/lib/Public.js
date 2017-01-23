@@ -10,6 +10,7 @@ meui.Public_action = (function() {
           meui.component.initModule({
             el: 'nav',
             data: data,
+            tmpl:'{{for navlist}}<a class="left-to-right animate-element in-viewport" href="{{:target}}">{{:title}}</a>{{/for}}',
             methods: {
 
             }

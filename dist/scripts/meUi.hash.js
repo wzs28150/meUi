@@ -23,7 +23,8 @@ $(function() {
         url: 'json',
         api: '',
         tpl: 'tpl',
-        container: $('#main')
+        container: $('#main'),
+        alis:["dist/scripts/package/compat/prefixfree.min.js", "dist/scripts/package/render/jsrender.js"]
     });
 
 });
@@ -31,12 +32,15 @@ $(function() {
 var meui = (function() {
     "use strict";
     var initModule = function($setting) {
+      meui.loadScript.initModule($setting.alis, function () {
         meui.shell.initModule($setting);
         //meui.copyright.initModule();
         meui.aspectratio.initModule({});
         meui.animated.initModule();
         //入口回调
         meui.Callback.initModule();
+  		});
+
 
     };
     return {
@@ -66,40 +70,6 @@ meui.copyright = (function() {
     };
     return {
         initModule: initModule
-    };
-}());
-//通用方法
-meui.util = (function() {
-    "use strict";
-    var makeError, setConfigMap;
-    makeError = function(name_text, msg_text, data) {
-        var error = new Error();
-        error.name = name_text;
-        error.message = msg_text;
-        if (data) {
-            error.data = data;
-        }
-        return error;
-    };
-    setConfigMap = function(arg_map) {
-        var input_map = arg_map.input_map,
-            settable_map = arg_map.settable_map,
-            config_map = arg_map.config_map,
-            key_name, error;
-        for (key_name in input_map) {
-            if (input_map.hasOwnProperty(key_name)) {
-                if (settable_map.hasOwnProperty(key_name)) {
-                    config_map[key_name] = input_map[key_name];
-                } else {
-                    error = makeError('Bad Input', 'Setting config key |' + key_name + '| is not supported');
-                    throw error;
-                }
-            }
-        }
-    };
-    return {
-        makeError: makeError,
-        setConfigMap: setConfigMap
     };
 }());
 //处理元素高度
@@ -542,21 +512,21 @@ meui.action = (function() {
 		var bar = eval;
 		//evil(actionstr);
 		bar(actionstr);
-		meui.aspectratio.initModule({});
+		meui.aspectratio.initModule();
 	};
 	initModule = function($action, load) {
 		//meui.loadScript.initModule(load,loadAction($action));
-		var jsstr = 'var scripts = ["dist/scripts/package/compat/prefixfree.min.js", "dist/scripts/package/render/jsrender.js","dist/scripts/lib/'+$action+'Action.class.js"];';
+		var jsstr = 'var scripts = ["dist/scripts/lib/'+$action+'Action.class.js"];';
 		var bar = eval;
 		bar(jsstr);
 		meui.loadScript.initModule(scripts, function () {
 			loadAction($action);
 		});
 
-		meui.aspectratio.initModule({});
+		meui.aspectratio.initModule();
 		meui.animated.initModule();
 		//入口回调
-		meui.Callback.initModule();
+		//meui.Callback.initModule();
 	};
 	return {initModule: initModule};
 }());
@@ -764,92 +734,23 @@ meui.medel = (function() {
     };
 }());
 
-meui.Backtotop = (function() {
-    "use strict";
-    var stateMap = {},
-        jqueryMap = {},
-        setJqueryMap,
-        initModule, backtotop, backbuttonshow;
-    setJqueryMap = function() {};
-    backbuttonshow = function() {
-        if ($(window).scrollTop() > 600) {
-            $("#back-to-top").fadeIn(500);
-        } else {
-            $("#back-to-top").fadeOut(500);
-        }
-    };
-    backtotop = function() {
-        $('body,html').stop().animate({
-            scrollTop: 0
-        }, 500);
-        return false;
-    };
-    initModule = function() {
-        $("#back-to-top").hide();
-        $(window).scroll(function() {
-            backbuttonshow();
-        });
-        $("#back-to-top").click(function() {
-            backtotop();
-        });
-    };
-    return {
-        initModule: initModule,
-    };
-}());
-meui.Nav = (function() {
-    "use strict";
-    var stateMap = {},
-        jqueryMap = {},
-        setJqueryMap,
-        initModule, navOn, navToggle;
-    setJqueryMap = function() {};
-    navToggle = function() {
-        $('header .navbar-toggle').click(function() {
-            if ($("header nav").is(":hidden")) {
-                $("header nav").slideDown(); //如果元素为隐藏,则将它显现
-            } else {
-                $("header nav").slideUp(); //如果元素为显现,则将其隐藏
-            }
-            $("header nav a").removeClass("in-viewport");
-            $("header nav a").click(function() {
-                if ($("header nav").is(":hidden")) {
-                    $("header nav").slideDown(); //如果元素为隐藏,则将它显现
-                } else {
-                    $("header nav").slideUp(); //如果元素为显现,则将其隐藏
-                }
-            });
-            $("header nav a").each(function(e) {
-                var a = $(this);
-                a.hasClass("in-viewport") || setTimeout(function() {
-                    a.addClass("in-viewport")
-                }, 100 * e)
-            });
-        });
-    };
-    initModule = function(i) {
-        if (i != undefined) {
-            $('header nav a').removeClass('on');
-            $('header nav a').eq(i).addClass('on');
-        } else {
-            $('header  nav a').click(function() {
-                //alert(1)
-                $('header  nav a').removeClass('on');
-                $(this).addClass('on');
-            });
-        }
-        if ($(window).width() < 960) {
-            navToggle();
-        }
-        $(window).resize(function() {
-            if ($(window).width() < 960) {
-                navToggle();
-            }
-        });
-    };
-    return {
-        initModule: initModule,
-    };
+meui.component = (function() {
+  var stateMap = {},initModule,Load;
+  Load = function(){
+    var Tmpl = $.templates(stateMap.Tmpl);
+    var html = Tmpl.render(stateMap.data);
+    stateMap.el.html(html);
+  };
+  initModule = function($setting) {
+    stateMap.el = $($setting.el);
+    stateMap.Tmpl = stateMap.el.html();
+    stateMap.data = $setting.data;
+    $($setting.el).html('');
+    Load();
+  };
+  return {
+      initModule: initModule,
+  };
 }());
 meui.Callback = (function() {
     "use strict";
@@ -859,8 +760,10 @@ meui.Callback = (function() {
         initModule;
     setJqueryMap = function() {};
     initModule = function() {
-        meui.Backtotop.initModule();
-        meui.Nav.initModule();
+        var scripts = ["dist/scripts/lib/Public.js"];
+        meui.loadScript.initModule(scripts, function() {
+          meui.Public_action.initModule();
+        });
     };
     return {
         initModule: initModule,

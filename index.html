@@ -13,7 +13,7 @@
         <!--[if lte IE 8]>
     <script type="text/javascript" src="dist/scripts/package/jquery/jquery-1.11.3.min.js"></script>
     <![endif]-->
-        <script type="text/javascript" src="dist/scripts/meUi.hash.min.js"></script>
+        <script type="text/javascript" src="dist/scripts/meUi.hash.js"></script>
 
         <!--[if lte IE 8]>
     <script type="text/javascript" src="dist/scripts/respond.js"></script>
@@ -33,12 +33,7 @@
                     MEUI
                 </div>
                 <nav class="fr">
-                    <a class="left-to-right animate-element in-viewport" href="#">首页</a>
-                    <a class="left-to-right animate-element in-viewport" href="#About">关于我们</a>
-                    <a class="left-to-right animate-element in-viewport" href="#News">新闻中心</a>
-                    <a class="left-to-right animate-element in-viewport" href="#Products">产品中心</a>
-                    <a class="left-to-right animate-element in-viewport" href="#Content">单页</a>
-                    <a class="left-to-right animate-element in-viewport" href="#Packages">组件</a>
+                  {{for navlist}}<a class="left-to-right animate-element in-viewport" href="{{:target}}">{{:title}}</a>{{/for}}
                 </nav>
                 <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>

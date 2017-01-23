@@ -38,6 +38,7 @@ meui.Index_action = (function() {
 	        indexBanner();
 	        propicColor();
 				});
+        meui.Nav.initModule(0);
     };
     return {
         initModule: initModule,

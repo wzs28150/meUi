@@ -4,6 +4,7 @@ meui.About_action = (function() {
 
 	initModule = function() {
 		console.log('About is load');
+		meui.Nav.initModule(1);
 	};
 	return {initModule: initModule};
 }());

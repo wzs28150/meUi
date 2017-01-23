@@ -746,6 +746,7 @@ meui.component = (function() {
     stateMap.el = $($setting.el);
     stateMap.Tmpl = $setting.tmpl;
     stateMap.data = $setting.data;
+    stateMap.methods = $setting.methods;
     stateMap.el.hide().html('');
     Load();
   };

@@ -15,11 +15,11 @@ meui.Public_action = (function() {
 
             }
           });
-
+          
         }
     });
 
-		meui.Nav.initModule();
+
 	};
 	return {initModule: initModule};
 }());

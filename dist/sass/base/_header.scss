@@ -14,7 +14,7 @@ header{
 		background-color: #fff;
 		.logo{ color:#5579ed;}
 		a{color: #5579ed;
-			&:hover{
+			&:hover,&.on{
 				background:#0b76ac; color: #fff;transition:all .4s,transform .4s;
 			}
 		}

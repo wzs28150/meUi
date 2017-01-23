@@ -4,42 +4,20 @@ meui.Public_action = (function() {
 	initModule = function() {
 		//alert(1);
 		//meui.Backtotop.initModule();
-		meui.component.initModule({
-			el: 'nav',
-			data: {
-				"err_code": "118",
-				"navlist": [
-					{
-						"catid": "22",
-						"title": "首页",
-						"target": "#"
-					}, {
-						"catid": "22",
-						"title": "关于我们",
-						"target": "#About"
-					}, {
-						"catid": "22",
-						"title": "新闻中心",
-						"target": "#News"
-					}, {
-						"catid": "22",
-						"title": "产品中心",
-						"target": "#Products"
-					}, {
-						"catid": "22",
-						"title": "单页",
-						"target": "#Content"
-					}, {
-						"catid": "22",
-						"title": "组件",
-						"target": "#Packages"
-					}
-				]
-			},
-			methods: {
+    var url = "json/Nav.json";
+    $.getJSON(url, function(data) {
+        if ('118' === data.err_code) {
+          meui.component.initModule({
+            el: 'nav',
+            data: data,
+            methods: {
 
-			}
-		});
+            }
+          });
+
+        }
+    });
+
 		meui.Nav.initModule();
 	};
 	return {initModule: initModule};

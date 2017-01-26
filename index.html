@@ -10,11 +10,8 @@
         <link rel="shortcut icon" href="images/favicon.png" />
         <link rel="stylesheet" type="text/css" href="dist/css/me.css" media="all" />
 
-        <script type="text/javascript" src="dist/scripts/package/jquery/jquery-2.1.4.min.js"></script>
-         <!--[if lte IE 8]>
-     <script type="text/javascript" src="dist/scripts/package/jquery/jquery-1.11.3.min.js"></script>
-     <![endif]-->
-     <script type="text/javascript" src="dist/scripts/meUi.hash.js"></script>
+     <script type="text/javascript" src="dist/scripts/meUi.min.js"></script>
+
         <!--[if lte IE 8]>
     <script type="text/javascript" src="dist/scripts/respond.js"></script>
     <link rel="stylesheet" type="text/css" href="dist/css/ie.css" />
@@ -23,6 +20,16 @@
         <!--[if lt IE 9]>
     <script type="text/javascript" src="dist/scripts/html5shiv.js"></script>
     <![endif]-->
+    <script type="text/javascript">
+      meui.Start = (function() {
+        "use strict";
+        var initModule;
+        initModule = function() {
+          meui.action.initModule('Index');
+        };
+        return {initModule: initModule};
+      }());
+    </script>
     </head>
 
     <body>

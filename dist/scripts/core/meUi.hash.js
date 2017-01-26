@@ -14,40 +14,7 @@
 //Swiper 图片切换插件
 
 
-$(function() {
-    "use strict";
-    //console.clear();
 
-    meui.initModule({
-        ishash: true,
-        url: 'json',
-        api: '',
-        tpl: 'tpl',
-        container: $('#main'),
-        alis:["dist/scripts/package/compat/prefixfree.min.js", "dist/scripts/package/render/jsrender.js"]
-    });
-
-});
-//入口
-var meui = (function() {
-    "use strict";
-    var initModule = function($setting) {
-      meui.loadScript.initModule($setting.alis, function () {
-        meui.Start.initModule();
-        meui.shell.initModule($setting);
-        //meui.copyright.initModule();
-        meui.aspectratio.initModule({});
-        meui.animated.initModule();
-        //入口回调
-        meui.Callback.initModule();
-  		});
-
-
-    };
-    return {
-        initModule: initModule
-    };
-}());
 meui.exists = function(selector) {
     "use strict";
     return ($(selector).length > 0);
@@ -250,60 +217,7 @@ meui.isIE = (function() {
 	};
 	return {initModule: initModule};
 }());
-//加载外部js
-meui.loadScript = (function() {
-	"use strict";
-	var initModule,
-		parallelLoadScripts;
-	parallelLoadScripts = function(scripts, callback) {
-		if (typeof(scripts) != "object")
-			var scripts = [scripts];
-		var HEAD = document.getElementsByTagName("head").item(0) || document.documentElement,
-			s = new Array(),
-			loaded = 0;
-		for (var i = 0; i < scripts.length; i++) {
-			s[i] = document.createElement("script");
-			s[i].setAttribute("type", "text/javascript");
-			s[i].onload = s[i].onreadystatechange = function() { //Attach handlers for all browsers
-				if (!/*@cc_on!@*/
-				0 || this.readyState == "loaded" || this.readyState == "complete") {
-					loaded++;
-					this.onload = this.onreadystatechange = null;
-					this.parentNode.removeChild(this);
-					if (loaded == scripts.length && typeof(callback) == "function")
-						callback();
-					}
-				};
-			s[i].setAttribute("src", scripts[i]);
-			HEAD.appendChild(s[i]);
-		}
-	};
-	initModule = function(url, callback) {
-		parallelLoadScripts(url, callback)
-	};
-	return {initModule: initModule};
-}());
-//加载外部css
-meui.loadcss = (function() {
-	"use strict";
-	var initModule,
-		dynamicLoading;
-	dynamicLoading = function(path) {
-		if (!path || path.length === 0) {
-			throw new Error('argument "path" is required !');
-		}
-		var head = document.getElementsByTagName('head')[0];
-		var link = document.createElement('link');
-		link.href = path;
-		link.rel = 'stylesheet';
-		link.type = 'text/css';
-		head.appendChild(link);
-	}
-	initModule = function(path) {
-		dynamicLoading(path)
-	};
-	return {initModule: initModule};
-}());
+
 //shell
 meui.shell = (function() {
     "use strict";
@@ -333,7 +247,7 @@ meui.shell = (function() {
     initModule = function($setting) {
         //console.log($setting);
         stateMap.ishash = $setting.ishash;
-        stateMap.container = $setting.container;
+        stateMap.container = $($setting.container);
         stateMap.url = $setting.url;
         stateMap.api = $setting.api;
         stateMap.tpl = $setting.tpl;

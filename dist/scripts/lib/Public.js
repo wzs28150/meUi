@@ -18,8 +18,6 @@ meui.Public_action = (function() {
 
         }
     });
-
-
 	};
 	return {initModule: initModule};
 }());

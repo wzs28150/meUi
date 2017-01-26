@@ -568,10 +568,13 @@ meui.templates = (function() {
         stateMap.tempindex = $setting.$tempindex;
         //console.log($setting);
         setJqueryMap();
-        loadtemplates();
-        setTimeout(function() {
-            settemplates(data);
-        }, 2400);
+        var scripts = ["dist/scripts/package/render/jsrender.js"];
+    		meui.loadScript.initModule(scripts, function () {
+          loadtemplates();
+          setTimeout(function() {
+              settemplates(data);
+          }, 2400);
+    		});
 
     };
     //console.log(configMap);

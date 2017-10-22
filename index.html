@@ -1,57 +1,382 @@
-<!doctype html>
-<html itemscope="itemscope" xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<!DOCTYPE html>
+<!--[if lte IE 9]> <html lang="en" class="no-js lte-ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
 
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>::meUI::</title>
-        <link rel="shortcut icon" href="images/favicon.png" />
-        <link rel="stylesheet" type="text/css" href="dist/css/me.css" media="all" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>首页 - 哈尔滨电气动力装备有限公司</title>
+  <link rel="stylesheet" href="./src/css/me.css">
+  <script src="./src/scripts/package/scroll/SmoothScroll.js"></script>
+  <!--[if IE 8]>
+  <script src="./src/scripts/package/compat/html5shiv.js"></script>
+  <script src="./src/scripts/package/compat/respond.js"></script>
+<![endif]-->
+</head>
 
-     <script type="text/javascript" src="dist/scripts/meUi.min.js"></script>
-
-        <!--[if lte IE 8]>
-    <script type="text/javascript" src="dist/scripts/respond.js"></script>
-    <link rel="stylesheet" type="text/css" href="dist/css/ie.css" />
-    <script type="text/javascript" src="dist/scripts/ie8.js"></script>
-    <![endif]-->
-        <!--[if lt IE 9]>
-    <script type="text/javascript" src="dist/scripts/html5shiv.js"></script>
-    <![endif]-->
-    <script type="text/javascript">
-      meui.Start = (function() {
-        "use strict";
-        var initModule;
-        initModule = function() {
-          meui.action.initModule('Index');
-        };
-        return {initModule: initModule};
-      }());
-    </script>
-    </head>
-
-    <body>
-        <header class="light">
-            <div class="contnern">
-                <div class="logo fl">
-                    <!--<img src="" alt="">-->
-                    MEUI
-                </div>
-                <nav class="fr">
-
-                </nav>
-                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <div class="clearfix"></div>
+<body class="scroller">
+  <div class="scroller-inner">
+    <div class="scroller-content">
+      <div id="progress">
+        <span></span>
+      </div>
+      <!-- 弹窗 -->
+      <div class="alert_player" style="display:none;">
+        <div class="bg"></div>
+        <div class="layer">
+          <div class="info"></div>
+          <a class="queren_btn" data-ajax="no">确认</a>
+        </div>
+      </div>
+      <!-- 弹窗 -->
+      <input id="myInput" type="checkbox">
+      <header>
+        <div class="header-bar">
+          <div class="container_1200">
+            <div class="fl weither">
+              2017年08月08日 周二 哈尔滨 19 ~ 26℃ 雷阵雨转多云
             </div>
-        </header>
-        <main id="main"></main>
-        <footer class=""></footer>
-    </body>
+            <div class="fr">
+              <a href="">加入收藏</a> |
+              <a href="">设为首页</a>
+            </div>
+          </div>
+        </div>
+        <div class="header-main">
+          <div class="container_1200">
+            <div class="fl logo">
+              <img src="./src/images/h_logo.jpg" alt="">
+            </div>
+            <div class="fr search">
+              <input type="text" placeholder="请输入搜索内容">
+              <a href="">搜索</a>
+            </div>
+            <label for="myInput" class="myInput wap">
+          <div class="menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"> </div>
+          </div>
+        </label>
+          </div>
+        </div>
+      </header>
+      <nav>
+        <ul class="container_1200">
+          <a href="./index.html">网站首页</a>
+          <a href="./about.html">实力动装</a>
+          <a href="./about.html">文化动装</a>
+          <a href="./culture.html">时事新闻</a>
+          <a href="./technology.html">科技实力</a>
+          <a href="./strategy.html">战略发展</a>
+          <a href="./personnel.html">人才实力</a>
+          <a href="./service.html">营销与服务</a>
+          <a href="./resource .html">资源中心</a>
+          <a href="./customer.html">客户交流</a>
+        </ul>
+      </nav>
+      <main class=" ">
+        <article class="index" data-main="index">
+          <section class="banner">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" data-pc="./src/images/i_banner_pc.jpg" data-wap="./src/images/i_banner_pc.jpg"> </div>
+                <div class="swiper-slide" data-pc="./src/images/i_banner_pc.jpg" data-wap="./src/images/i_banner_pc.jpg"> </div>
+                <div class="swiper-slide" data-pc="./src/images/i_banner_pc.jpg" data-wap="./src/images/i_banner_pc.jpg"> </div>
+              </div>
+              <!-- Add Pagination -->
+              <div class="swiper-pagination  swiper-pagination-white"></div>
+              <div class="swiper-button-prev swiper-button-white"></div>
+              <div class="swiper-button-next swiper-button-white"></div>
+            </div>
+          </section>
+
+          <section class="notice">
+            <div class="container_1200">
+              <div class="tit fl">
+                <span class="hddz-volume"></span>通知公告</div>
+              <ul class="list">
+                <li>
+                  <a href="">哈尔滨电气集团公司招聘公告
+                <span class="fr">2016-11-25</span>
+              </a>
+                </li>
+                <li>
+                  <a href="">哈尔滨电气集团公司招聘公告
+                <span class="fr">2016-11-25</span>
+              </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="i-news">
+            <div class="container_1200">
+              <div class="w50 fl">
+                <div class="swiper-container">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-image:url(./src/images/i_news.jpg)">
+                      <div class="text">
+                        <a class="text-hidden" href="">公司隆重召开纪念建党九十六周年暨“党内先优”……</a>
+                      </div>
+                    </div>
+                    <div class="swiper-slide" style="background-image:url(./src/images/i_news.jpg)">
+                      <div class="text">
+                        <a class="text-hidden" href="">公司隆重召开纪念建党九十六周年暨“党内先优”……</a>
+                      </div>
+                    </div>
+                    <div class="swiper-slide" style="background-image:url(./src/images/i_news.jpg)">
+                      <div class="text">
+                        <a class="text-hidden" href="">公司隆重召开纪念建党九十六周年暨“党内先优”……</a>
+                      </div>
+                    </div>
+                    <div class="swiper-slide" style="background-image:url(./src/images/i_news.jpg)">
+                      <div class="text">
+                        <a class="text-hidden" href="">公司隆重召开纪念建党九十六周年暨“党内先优”……</a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Add Pagination -->
+                  <div class="swiper-pagination"></div>
+                </div>
+              </div>
+              <div class="w50 fr">
+                <div class="i-news-tab">
+                  <a class="on" data-ajax="no" href="javascript:void(0);">公司新闻</a>
+                  <a data-ajax="no" href="javascript:void(0);">行业新闻</a>
+                  <a data-ajax="no" href="javascript:void(0);">集团新闻</a>
+                  <a data-ajax="no" class="more" href="">MORE+</a>
+                </div>
+                <div class="i-news-content on">
+                  <ul class="list">
+                    <li>
+                      <a class="text-hidden" href="">
+                    <span class="ico">◆</span>1公司隆重召开纪念建党九十六周年暨“党内先优年暨“党内先优...
+                    <span class="time fr">2016-11-25</span>
+                  </a>
+                    </li>
+                    <li>
+                      <a class="text-hidden" href="">
+                    <span class="ico">◆</span>公司隆重召开纪念建党九十六周年暨“党内先优年暨“党内先优...
+                    <span class="time fr">2016-11-25</span>
+                  </a>
+                    </li>
+                    <li>
+                      <a class="text-hidden" href="">
+                    <span class="ico">◆</span>公司隆重召开纪念建党九十六周年暨“党内先优年暨“党内先优...
+                    <span class="time fr">2016-11-25</span>
+                  </a>
+                    </li>
+                    <li>
+                      <a class="text-hidden" href="">
+                    <span class="ico">◆</span>公司隆重召开纪念建党九十六周年暨“党内先优年暨“党内先优...
+                    <span class="time fr">2016-11-25</span>
+                  </a>
+                    </li>
+                    <li>
+                      <a class="text-hidden" href="">
+                    <span class="ico">◆</span>公司隆重召开纪念建党九十六周年暨“党内先优年暨“党内先优...
+                    <span class="time fr">2016-11-25</span>
+                  </a>
+                    </li>
+                    <li>
+                      <a class="text-hidden" href="">
+                    <span class="ico">◆</span>公司隆重召开纪念建党九十六周年暨“党内先优年暨“党内先优...
+                    <span class="time fr">2016-11-25</span>
+                  </a>
+                    </li>
+                    <li>
+                      <a class="text-hidden" href="">
+                    <span class="ico">◆</span>公司隆重召开纪念建党九十六周年暨“党内先优年暨“党内先优...
+                    <span class="time fr">2016-11-25</span>
+                  </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="i-news-content">
+                  <ul class="list">
+                    <li>
+                      <a class="text-hidden" href="">
+                    <span class="ico">◆</span>2公司隆重召开纪念建党九十六周年暨“党内先优年暨“党内先优...
+                    <span class="time fr">2016-11-25</span>
+                  </a>
+                    </li>
+                    <li>
+                      <a class="text-hidden" href="">
+                    <span class="ico">◆</span>公司隆重召开纪念建党九十六周年暨“党内先优年暨“党内先优...
+                    <span class="time fr">2016-11-25</span>
+                  </a>
+                    </li>
+                    <li>
+                      <a class="text-hidden" href="">
+                    <span class="ico">◆</span>公司隆重召开纪念建党九十六周年暨“党内先优年暨“党内先优...
+                    <span class="time fr">2016-11-25</span>
+                  </a>
+                    </li>
+                    <li>
+                      <a class="text-hidden" href="">
+                    <span class="ico">◆</span>公司隆重召开纪念建党九十六周年暨“党内先优年暨“党内先优...
+                    <span class="time fr">2016-11-25</span>
+                  </a>
+                    </li>
+                    <li>
+                      <a class="text-hidden" href="">
+                    <span class="ico">◆</span>公司隆重召开纪念建党九十六周年暨“党内先优年暨“党内先优...
+                    <span class="time fr">2016-11-25</span>
+                  </a>
+                    </li>
+                    <li>
+                      <a class="text-hidden" href="">
+                    <span class="ico">◆</span>公司隆重召开纪念建党九十六周年暨“党内先优年暨“党内先优...
+                    <span class="time fr">2016-11-25</span>
+                  </a>
+                    </li>
+                    <li>
+                      <a class="text-hidden" href="">
+                    <span class="ico">◆</span>公司隆重召开纪念建党九十六周年暨“党内先优年暨“党内先优...
+                    <span class="time fr">2016-11-25</span>
+                  </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="i-news-content">
+                  <ul class="list">
+                    <li>
+                      <a class="text-hidden" href="">
+                    <span class="ico">◆</span>3公司隆重召开纪念建党九十六周年暨“党内先优年暨“党内先优...
+                    <span class="time fr">2016-11-25</span>
+                  </a>
+                    </li>
+                    <li>
+                      <a class="text-hidden" href="">
+                    <span class="ico">◆</span>公司隆重召开纪念建党九十六周年暨“党内先优年暨“党内先优...
+                    <span class="time fr">2016-11-25</span>
+                  </a>
+                    </li>
+                    <li>
+                      <a class="text-hidden" href="">
+                    <span class="ico">◆</span>公司隆重召开纪念建党九十六周年暨“党内先优年暨“党内先优...
+                    <span class="time fr">2016-11-25</span>
+                  </a>
+                    </li>
+                    <li>
+                      <a class="text-hidden" href="">
+                    <span class="ico">◆</span>公司隆重召开纪念建党九十六周年暨“党内先优年暨“党内先优...
+                    <span class="time fr">2016-11-25</span>
+                  </a>
+                    </li>
+                    <li>
+                      <a class="text-hidden" href="">
+                    <span class="ico">◆</span>公司隆重召开纪念建党九十六周年暨“党内先优年暨“党内先优...
+                    <span class="time fr">2016-11-25</span>
+                  </a>
+                    </li>
+                    <li>
+                      <a class="text-hidden" href="">
+                    <span class="ico">◆</span>公司隆重召开纪念建党九十六周年暨“党内先优年暨“党内先优...
+                    <span class="time fr">2016-11-25</span>
+                  </a>
+                    </li>
+                    <li>
+                      <a class="text-hidden" href="">
+                    <span class="ico">◆</span>公司隆重召开纪念建党九十六周年暨“党内先优年暨“党内先优...
+                    <span class="time fr">2016-11-25</span>
+                  </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="i-ad">
+            <div class="container_1200">
+              <img src="./src/images/ad.jpg" alt="">
+            </div>
+          </section>
+
+          <section class="i-pro">
+            <div class="container_1200">
+              <div class="tit">
+                <div class="ch">
+                  <span>产品展示</span>
+                </div>
+                <div class="en">PRODUCT DISPLAY</div>
+              </div>
+              <div class="list">
+                <ul>
+                  <li>
+                    <a href="">
+                  <img src="./src/images/i_pro.jpg" alt="">
+                  <p>同步电动机</p>
+                </a>
+                  </li>
+                  <li>
+                    <a href="">
+                  <img src="./src/images/i_pro.jpg" alt="">
+                  <p>同步电动机</p>
+                </a>
+                  </li>
+                  <li class="mRn">
+                    <a href="">
+                  <img src="./src/images/i_pro.jpg" alt="">
+                  <p>同步电动机</p>
+                </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="i-quicklink">
+            <div class="container_1200">
+              <div class="w60 fl">
+                <div class="swiper-container">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-image:url(./src/images/ql_1.png)"></div>
+                    <div class="swiper-slide" style="background-image:url(./src/images/ql_2.png)"></div>
+                    <div class="swiper-slide" style="background-image:url(./src/images/ql_1.png)"></div>
+                    <div class="swiper-slide" style="background-image:url(./src/images/ql_2.png)"></div>
+                  </div>
+                  <!-- Add Pagination -->
+                  <div class="swiper-pagination  swiper-pagination-white"></div>
+                  <div class="swiper-button-prev swiper-button-white"></div>
+                  <div class="swiper-button-next swiper-button-white"></div>
+                </div>
+              </div>
+              <div class="w40 fr">
+                <ul>
+                  <li><a href=""><img src="./src/images/ql_ico_1.png" alt="">营销与服务</a></li>
+                  <li class="middle"><a href=""><img src="./src/images/ql_ico_2.png" alt="">总经理信箱</a></li>
+                  <li><a href=""><img src="./src/images/ql_ico_3.png" alt="">联系我们</a></li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </article>
+      </main>
+      <footer>
+        <div class="container_1200">
+          <span class="fl">Copyright ©2017 哈尔滨电气动力装备有限公司
+        <span class="pc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;黑ICP备11005449号 </span>
+          </span>
+          <span class="fr pc">
+        <a href="">公司简介</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="">人才招聘</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="">营销与网络</a>
+      </span>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <script src="./src/scripts/package/jquery/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="./src/scripts/package/scroll/jquery.mousewheel.min.js"></script>
+  <script src="./src/scripts/package/scroll/jquery.easing.min.js"></script>
+  <script src="./src/scripts/package/scroll/jquery.nicescroll.min.js"></script>
+  <script src="./src/scripts/require.js" data-main="./src/scripts/me"></script>
+</body>
 
 </html>

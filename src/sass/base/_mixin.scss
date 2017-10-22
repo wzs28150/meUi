@@ -1,0 +1,16 @@
+//处理动画
+@mixin tr($time,$type) {
+    transition: $type $time;
+}
+//响应式宽度判断
+@mixin max-screen($res) {
+    @media (max-width: $res) {
+        @content;
+    }
+}
+//响应式高度判断
+@mixin maxh-screen($res) {
+    @media (max-height: $res) {
+        @content;
+    }
+}

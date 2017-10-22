@@ -1,0 +1,10 @@
+@charset "utf-8";
+/*opacity*/
+@for $i from 1 through 9 {
+  .opacity-#{$i} { background-image:url('../images/op/op-#{$i}.png'); }
+}
+//@include opacity(80);
+@mixin opacity($opacity:50) {
+  opacity: $opacity / 100;
+  filter: alpha(opacity=$opacity);
+}

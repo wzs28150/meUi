@@ -1,0 +1,51 @@
+/* CSS Document */
+
+.contact {
+	.text-area {
+		font-size: 20px;
+		line-height: 36px;
+		font-weight: lighter;
+	}
+	.map {
+		width: 100%;
+		height: 500px;
+	}
+	.msg-list {
+		th {
+			text-align: right;
+			width: 90px;
+			padding-right: 10px;
+			vertical-align: middle;
+		}
+		input {
+			width: 304px;
+			height: 40px;
+			line-height: 40px;
+			border: 1px solid #dcdcdc;
+			margin: 10px 10px 10px 0;
+			padding: 0 5px;
+		}
+		textarea {
+			vertical-align: middle;
+			width: 564px;
+			height: 168px;
+			border: 1px solid #dcdcdc;
+			resize: none;
+			margin: 10px 10px 10px 0;
+			padding: 5px;
+		}
+		.submit {
+			display: block;
+			background-color: #36adcf;
+			color: #fff;
+			font-size: 14px;
+			font-weight: lighter;
+			height: 40px;
+			line-height: 40px;
+			width: 156px;
+			text-align: center;
+		}
+	}
+	#idcode{ height: 40px; display: inline-block; vertical-align: middle; margin: 10px 0;line-height: 40px; }
+	.ehong-idcode-val{ padding: 0 10px; height: 42px; display: inline-block; float: left; line-height: 42px; border: none; background-color: #fff; }
+}

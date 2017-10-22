@@ -1,0 +1,86 @@
+/* CSS Document */
+
+.products {
+	.p_tit {
+		font-size: 50px;
+		font-weight: lighter;
+		text-align: center;
+	}
+	.pro-text {
+		background-color: #f3f5f6;
+		position: relative;
+		height: 344px;
+		img {
+			display: block;
+			width: 518px;
+			height: 344px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.inner {
+			padding-left: 577px;
+			padding-top: 74px;
+			padding-right: 50px;
+			color: #333333;
+		}
+	}
+	.tab {
+		margin-bottom: 130px;
+		.tab-nav {
+			margin-bottom: 20px;
+			border-bottom: 1px solid #d6d6d6;
+			a {
+				width: 187px;
+				line-height: 58px;
+				text-align: center;
+				font-size: 30px;
+				font-weight: lighter;
+				display: inline-block;
+				border: 1px solid transparent;
+				&.on {
+					border: 1px solid #b3b3b3;
+				}
+			}
+		}
+		.tab-inner {
+			position: relative;
+			.swiper-slide {
+				img {
+					display: block;
+					width: 100%;
+				}
+			}
+			.i-pro-l {
+				height: 70px;
+				width: 40px;
+				line-height: 70px;
+				text-align: center;
+				background-color: rgba(0, 0, 0, 0.6);
+				position: absolute;
+				left: 0;
+				top: 50%;
+				margin-top: -35px;
+				z-index: 5;
+				color: #b2b3b2;
+				font-size: 20px;
+				cursor: pointer;
+			}
+			.i-pro-r {
+				height: 70px;
+				width: 40px;
+				line-height: 70px;
+				text-align: center;
+				background-color: rgba(0, 0, 0, 0.6);
+				position: absolute;
+				right: 0;
+				top: 50%;
+				margin-top: -35px;
+				z-index: 5;
+				color: #b2b3b2;
+				font-size: 20px;
+				cursor: pointer;
+			}
+		}
+	}
+}

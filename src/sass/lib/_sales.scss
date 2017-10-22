@@ -1,0 +1,20 @@
+/* CSS Document */
+.sales {
+	.sales-map{ background-image: url(../images/s_map.png); background-repeat: no-repeat; height: 575px; background-position: 80px center;}
+	.sales-contact{ overflow: hidden;
+		.item {
+			width: 282px;
+			margin-right: 46px;
+			float: left;
+			background-color: #f9f9f9;
+			border:1px solid #e5e5e5;
+			border-top: 8px solid #0058a9;
+			margin-bottom: 46px;
+			padding: 26px;
+			.title{
+				font-size: 20px; font-weight: bold; color: #333; padding: 10px 0 30px;
+			}
+			.des{ font-size: 16px; line-height: 22px;}
+		}
+	}
+}

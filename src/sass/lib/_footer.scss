@@ -1,0 +1,17 @@
+@charset "utf-8";
+footer {
+  background-color: #434343;
+  height: 85px;
+  line-height: 85px;
+  color: #999;
+  font-size: 14px;
+  position: relative;
+  z-index: 99;
+  span.pc {
+    display: inline!important;
+  }
+  @include tr(transform, 0.4s);
+  a {
+    color: #999;
+  }
+}

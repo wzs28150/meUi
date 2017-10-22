@@ -1,0 +1,43 @@
+/* CSS Document */
+
+.service {
+	.ask-list {
+		.item {
+			input {
+				display: none;
+			}
+			label {
+				display: block;
+				height: 59px;
+				line-height: 59px;
+				border-top: 1px dashed #dedcdc;
+				background-image: url(../images/plus.png);
+				background-repeat: no-repeat;
+				background-position: 98% center;
+				cursor: pointer;
+			}
+			.text-area {
+				padding: 60px 40px;
+				display: none;
+				background-color: #f2f2f2;
+			}
+			input:checked~.text-area {
+				display: block;
+			}
+			input:checked~label {
+				background-image: url(../images/min.png);
+			}
+		}
+	}
+
+	.service-download{
+		.item{  position: relative; height: 60px;
+			a{ display: block; height: 59px; line-height: 59px; border-bottom:1px dashed #dedcdc; padding: 0 30px; background-image: url(../images/download_ico.png); background-repeat: no-repeat; background-position: 96% center; position: relative; z-index: 1; transition: $tr4;  }
+			em{ position: absolute; height: 60px; top: 0; left: 0; display: block; z-index: 0; transition: $tr4;  width: 0; }
+			&:hover{ 
+				a{ color: #36adcf; transition: $tr4;  background-image: url(../images/download_h_ico.png);  }
+				em{ background-color: #f4f4f4; width: 100%; transition: $tr4; }
+			}
+		}
+	}
+}

@@ -1,0 +1,31 @@
+/* CSS Document */
+
+.project {
+	.project-list{ overflow: hidden;
+		.item {
+			float: left;
+			width: 350px;
+			margin-right: 25px; margin-bottom: 40px;
+			a{ display: block;
+				img{ display: block; width: 100%;}
+				p {
+					height: 90px;
+					line-height: 90px;
+					text-align: center;
+					background-color: #e1e1e1;
+					font-size: 26px;
+					font-weight: lighter;
+					color: #333333;
+					transition: $tr4;
+				}
+				&:hover{
+					p {
+						background-color: #006cc7;
+						color: #fff;
+						transition: $tr4;
+					}
+				}
+			}
+		}
+	}
+}

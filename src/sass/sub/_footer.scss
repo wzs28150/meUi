@@ -1,0 +1,23 @@
+ @include max-screen(1440px) {
+     footer {
+         height: 75px;
+         line-height: 75px;
+     }
+ }
+
+ @include max-screen(980px) {
+     footer {
+         height: 60px;
+         line-height: 60px;
+         text-align: center;
+         .fl {
+             width: 100%;
+         }
+         span.pc{ display: none!important; }
+     }
+ }
+  @include max-screen(320px) {
+      footer {
+          font-size: 12px;
+      }
+  }

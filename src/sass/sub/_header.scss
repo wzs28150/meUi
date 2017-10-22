@@ -1,0 +1,150 @@
+@charset "utf-8";
+@include max-screen(1440px) {
+    header {
+        .header-bar {
+            line-height: 28px;
+            font-size: 12px;
+        }
+        .header-main {
+            height: 130px;
+            .logo {
+                img {
+                    height: 108px;
+                    display: block;
+                    margin: 11px 0;
+                }
+            }
+            .search {
+                padding: 40px 0 0 0;
+            }
+        }
+    }
+    nav {
+        height: 64px;
+        a {
+            line-height: 64px;
+        }
+    }
+    article {
+        margin-top: 0;
+    }
+}
+
+@include max-screen(1024px) {}
+
+@include max-screen(980px) {
+    header {
+        position: relative;
+        z-index: 99;
+        background-color: #fff;
+        border-bottom: 1px solid #ccc;
+        .header-bar {
+            display: none;
+        }
+        .header-main {
+            height: 60px;
+            .logo {
+                img {
+                    height: 50px;
+                    display: block;
+                    margin: 5px 0;
+                }
+            }
+            .search {
+                display: none;
+            }
+            label.myInput {
+                display: inline-block;
+                width: 59px;
+                height: 61px;
+                cursor: pointer;
+                margin: 0;
+                z-index: 100;
+                position: absolute;
+                right: -10px;
+                top: 0;
+                transition: $tr4;
+                overflow: hidden;
+                .menu {
+                    margin-top: 20px;
+                    width: 59px;
+                    .bar {
+                        height: 3px;
+                        width: 25px;
+                        border-radius: 5px;
+                        margin: 5px 17px;
+                        display: block;
+                        position: relative;
+                        background-color: #005faf;
+                        -moz-border-radius: 5px;
+                        -webkit-border-radius: 5px;
+                        border-radius: 5px;
+                        -moz-transition: 0.4s;
+                        -o-transition: 0.4s;
+                        -webkit-transition: 0.4s;
+                        transition: 0.4s
+                    }
+                }
+            }
+        }
+    }
+    #myInput:checked~header {
+        //transform: translateX(-120px);
+        label.myInput {
+            .bar {
+                // &:nth-of-type(1) {
+                //   transform: translateY(8px) rotate(45deg);
+                // }
+                &:nth-of-type(2) {
+                    width: 20px;
+                    @include tr(width, 0.4s);
+                }
+                &:nth-of-type(3) {
+                    width: 10px;
+                    @include tr(width, 0.4s);
+                }
+            }
+        }
+    }
+    #myInput:checked~main,
+    #myInput:checked~footer,
+    #myInput:checked~header {
+        transform: translateX(-120px);
+        @include tr(transform, 0.4s);
+    }
+    nav {
+        width: 120px;
+        min-height: 100%;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 0;
+        height: auto;
+        background: #005faf;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        ul {
+            padding: 40px 0;
+            margin: 0!important;
+            a {
+                width: 100%;
+                font-size: 16px;
+                line-height: 3em;
+            }
+        }
+    }
+}
+
+@include max-screen(960px) {}
+
+@include max-screen(360px) {}
+
+@include max-screen(320px) {}
+
+@media screen and (max-height: 768px) {}

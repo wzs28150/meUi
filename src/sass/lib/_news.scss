@@ -1,0 +1,88 @@
+/* CSS Document */
+
+.news {}
+
+.pic-news-list {
+	.item {
+		a {
+			border-bottom: 1px solid #eeeeee;
+			display: block;
+			height: 190px;
+			position: relative;
+			padding-bottom: 40px;
+			margin-bottom: 40px;
+			span {
+				display: block;
+			}
+			.pic {
+				width: 280px;
+				height: 190px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				img {
+					width: 280px;
+					height: 190px;
+					display: block;
+				}
+			}
+			.inner {
+				padding-left: 305px;
+				height: 190px;
+				overflow: hidden;
+				.title {
+					font-size: 16px;
+					line-height: 1em;
+					color: #333;
+					font-weight: bold;
+					margin: 20px 0;
+				}
+				.time {
+					color: #36adcf;
+					font-size: 22px;
+					font-family: "DINOT-CondMedium";
+					line-height: 1em;
+					margin-bottom: 15px;
+				}
+				.content {
+					font-size: 14px;
+					color: #999;
+					line-height: 22px;
+					margin-bottom: 20px;
+					height: 22 * 2px;
+					overflow: hidden;
+				}
+				.more {
+					font-size: 14px;
+					color: #999;
+				}
+			}
+		}
+	}
+}
+
+.pic-news-content {
+	.title {
+		color: #36adcf;
+		font-size: 24px;
+		font-weight: bold;
+		line-height: 32px;
+	}
+	.des {
+		font-size: 14px;
+		color: #999;
+		border-bottom: 1px solid #ccc;
+	}
+	.shangxia {
+		border-top: 1px solid #ccc;
+		a {
+			display: block;
+			line-height: 2em;
+			transition: $tr4;
+			&:hover {
+				color: #000;
+				transition: $tr4;
+			}
+		}
+	}
+}
